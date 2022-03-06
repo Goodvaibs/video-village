@@ -1,0 +1,199 @@
+<div class="hightdiv" style="height: 72px; background-color: transparent;"></div>
+<div class="container">
+    <div class="my-profile">
+        <div class="nav-content">
+            <div class="nav">
+                <div class="vertical-container">
+                    <div class="selected-certical-help">
+                        <button>
+                            Account
+                        </button>
+                        <img src="../../../../assets/imgsss/account.svg" alt="account">
+                    </div>
+                </div>
+                <div *ngFor="let item of allTabs" class="vertical-container" (click)="openContainer(item)">
+
+                    <div *ngIf="(item==shown) && (item != 'Help')" class="selected-vertical">
+                        <button (click)="openContainer(item)">
+                            {{item}}
+                        </button>
+                    </div>
+                    <div *ngIf="(item!=shown) && (item!= 'Help')" class="selectable">
+                        <button (click)="openContainer(item)">
+                            {{item}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <!-- <div *ngIf="(shown=='Account') || (shown=='My Profile')" class="avatarNtext">
+                    <div class="avatar">
+                        <img src="../../../../assets/imgsss/avatar/Avatar 1.svg" alt="" class="immg">
+                        <img src="../../../../assets/imgsss/avatar/Avatar 2.svg" alt="" class="immg">
+                        <img src="../../../../assets/imgsss/avatar/Avatar 3.svg" alt="" class="immg">
+                        <img src="../../../../assets/imgsss/avatar/Avatar 4.svg" alt="" class="immg">
+                        <img src="../../../../assets/imgsss/avatar/Avatar 5.svg" alt="" class="immg">
+                        <img src="../../../../assets/imgsss/avatar/Avatar 6.svg" alt="" class="immg">
+                        <img src="../../../../assets/imgsss/avatar/Avatar 7.svg" alt="" class="immg">
+
+                    </div>
+                    <p class="avtText">Select Your Avatar</p>
+                </div> -->
+
+                <div *ngIf="(shown=='Account') || (shown=='My Profile')" class="editProfile">
+                    <p class="title">Edit Profile</p>
+                    <hr class="blueLine">
+                    <div class="inputBoxes">
+                        <div class="textNInput">
+                            <p class="inputText"> First Name</p>
+                            <input type="text" [(ngModel)]="userInfo['FirstName']">
+                        </div>
+                        <div class="textNInput">
+                            <p class="inputText">Email address</p>
+                            <input type="email" [(ngModel)]="userInfo['MailId']">
+                        </div>
+                        <div class="textNInput">
+                            <p class="inputText">Middle Name</p>
+                            <input type="text" [(ngModel)]="userInfo['MiddleName']">
+                        </div>
+                        <div class="textNInput">
+                            <p class="inputText">Phone number</p>
+                            <input type="text" [(ngModel)]="userInfo['PhoneNo']">
+                        </div>
+                        <div class="textNInput">
+                            <p class="inputText">Last Name</p>
+                            <input type="text" [(ngModel)]="userInfo['LastName']">
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="btns" *ngIf="loaded">
+                        <button class="btn cancel" (click)="resetUserInfo()">
+                            Cancel
+                        </button>
+                        <button  class="btn save" (click)="updateUserInfo()">
+                            Save
+                        </button>
+                    </div>
+                </div>
+
+                <div *ngIf="shown=='Settings'" class="settings">
+                    <div class="content-settings">
+                        <div class="settings-black-box">
+                            <div class="logoSettings">
+                                <img src="../../../../assets/imgsss/Group 84.svg" alt="" class="immg">
+                            </div>
+                            <div class="smallNev">
+                                <div *ngFor="let item of settingsTabs" class="nav-text" (click)="openSettingsTab(item)">
+                                    <div *ngIf="shownSettingsTab==item">
+                                        {{item}}
+                                        <hr class="underline">
+                                    </div>
+
+                                    <div *ngIf="shownSettingsTab!=item">
+                                        {{item}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="shownSettingsTab=='Your Devices'" class="your-devices">
+                            <div class="registered-devices">
+                                <div class="title-button">
+                                    <p class="title1">Registered Devices</p>
+                                    <button class="deregister">Deregister</button>
+                                </div>
+                                <hr class="blue-row1">
+                                <div class="devices">
+                                    <input class="radioInput" type="checkbox">
+                                    <p class="device">iPhone (Arav Varma’s iPhone 1)</p>
+                                </div>
+                                <div class="devices">
+                                    <input class="radioInput" type="checkbox">
+                                    <p class="device">iPhone (HariKa Kolli’s iPhone 2)</p>
+                                </div>
+                                <div class="devices">
+                                    <input class="radioInput" type="checkbox">
+                                    <p class="device">Laptop (Arav Varma’s Laptop 1)</p>
+                                </div>
+                            </div>
+                            <div class="registered-new-devices">
+                                <div class="title-button">
+                                    <p class="title1">Register New Device</p>
+                                    <button class="register">Register</button>
+                                </div>
+                                <hr class="blue-row1">
+                                <p class="deviceText">
+                                    Register your device for the best Prime experience and access to Your
+                                    watchlist.
+                                </p>
+                            </div>
+                        </div>
+                        <div *ngIf="shownSettingsTab=='Language'" class="languages">
+                            <div class="title-button">
+                                <p class="title1">Select Website Language</p>
+                                <button class="save">Save</button>
+                            </div>
+                            <hr class="blue-row1">
+                            <div class="selectLang">
+                                <div class="radio-name">
+                                    <input type="radio" name="lang" value="1">
+                                    <p class="langName">English</p>
+                                </div>
+                                <div class="radio-name">
+                                    <input type="radio" name="lang" value="2">
+                                    <p class="langName">தமிழ்</p>
+                                </div>
+                                <div class="radio-name">
+                                    <input type="radio" name="lang" value="3">
+                                    <p class="langName">Türk</p>
+                                </div>
+                                <div class="radio-name">
+                                    <input type="radio" name="lang" value="4">
+                                    <p class="langName">తెలుగు</p>
+                                </div>
+                                <div class="radio-name">
+                                    <input type="radio" name="lang" value="5">
+                                    <p class="langName">മലയാളം</p>
+                                </div>
+                                <div class="radio-name">
+                                    <input type="radio" name="lang" value="6">
+                                    <p class="langName">Kannada</p>
+                                </div>
+                                <div class="radio-name">
+                                    <input type="radio" name="lang" value="7">
+                                    <p class="langName">Hindi</p>
+                                </div>
+                                <div class="radio-name">
+                                    <input type="radio" name="lang" value="8">
+                                    <p class="langName">터키어</p>
+                                </div>
+                                <div class="radio-name">
+                                    <input type="radio" name="lang" value="9">
+                                    <p class="langName">Urdu</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="shownSettingsTab=='Watch History'" class="watch-history">
+                            <p class="title">Videos removed from your watch history list will no longer influence video
+                                recommendations.</p>
+                        <div *ngFor="let item of watchHistory">
+                            <hr class="whiteLine">
+                            <div class="history-details">
+                                <p class="date">{{item.Title}}</p>
+                                <p class="watched-title">{{item.Title}}</p>
+                                <img src="../../../../assets/imgsss/trash 2.svg" alt="Delete" class="deleteBtn">
+                            </div>
+                            <hr class="whiteLine">
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

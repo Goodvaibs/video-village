@@ -1,0 +1,145 @@
+.container {
+  background-color: #0E1111;
+  font-family: Nunito;
+  color: #ffffff;
+  padding: 50px 50px 50px 130px;
+
+  .feedback {
+    display: flex;
+    flex-direction: row;
+
+
+    .contentDivs {
+      display: flex;
+      flex-direction: row;
+      width: 35%;
+
+      .termText {
+        font-size: 15px;
+        line-height: 20px;
+        text-align: justify;
+        margin-right: 20px;
+        margin-top: 50px;
+
+
+        span {
+          font-size: 21px;
+          line-height: 29px;
+          margin-bottom: 17px;
+
+        }
+
+        .pOne {
+          color: #0F79AF;
+          margin-bottom: 20px;
+        }
+
+        .pTwo {
+          font-size: 16px;
+          line-height: 22px;
+          margin-top: 50px;
+        }
+
+        .messageDiv {
+
+          display: flex;
+          flex-direction: row;
+
+          .pThree {
+            font-size: 13px;
+            line-height: 18px;
+
+            a {
+              color: #0F79AF;
+              text-decoration: none;
+            }
+          }
+
+          img {
+            align-self: flex-start;
+            margin: 10px 23px 5px 0px;
+          }
+        }
+
+        .selectDiv {
+          position: relative;
+
+          select {
+            width: 204px;
+            padding: 5px 15px;
+            background: #D9D9D9;
+            border-radius: 5px;
+            color: #282828;
+            -webkit-appearance: none;
+            border: none;
+            outline: 0;
+            font-size: 13px;
+            line-height: 18px;
+
+          }
+
+          img {
+            position: absolute;
+            left: 176px;
+            top: 10px;
+            background-color: #D9D9D9;
+          }
+        }
+
+      }
+    }
+
+    .image {
+      position: absolute;
+      right: 30px;
+      height: 350px;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .container {
+    padding: 50px 60px;
+
+    .feedback {
+
+      .contentDivs {
+        width: 50%;
+      }
+
+      .image {
+        opacity: .7;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .container {
+    padding: 40px 30px 40px 30px;
+
+    .feedback {
+
+      .contentDivs {
+        width: 90%;
+        z-index: 1;
+      }
+
+      .image {
+        right: 50%;
+        opacity: .3;
+        transform: translateX(50%);
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .hightdiv {
+    display: none;
+  }
+}

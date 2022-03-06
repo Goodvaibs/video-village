@@ -1,0 +1,170 @@
+.pcpLogin {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: #111111;
+  font-family: Nunito;
+  text-align: center;
+
+  .pcpImg {
+    width: 55%;
+    position: relative;
+
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      background: #BB8E4D 0% 0% no-repeat padding-box;
+      opacity: .2;
+    }
+  }
+
+  .pcpDetails {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px 7%;
+
+    .vvlogo {
+      width: 233px;
+      height: 106px;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .pcpHeading {
+      color: #BB8E4D;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .goldText {
+      color: #BB8E4D;
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      margin: 5px auto 1rem 0;
+    }
+
+    .pcpInputs {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .email,
+      .pass,
+      .busibess,
+      .rePass {
+
+
+        input {
+          box-sizing: border-box;
+          background: #FFFFFF;
+          border: none;
+          outline: none;
+          padding: 12px 25px;
+          font-size: 1.1rem;
+          border-radius: 15px;
+          color: #000000;
+          width: 100%;
+        }
+
+        p {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          color: #FFFFFF;
+          margin: .7rem auto .4rem 0;
+        }
+      }
+    }
+  }
+
+  .pcpBttn {
+    box-sizing: border-box;
+    padding: 10px 50px;
+    border: 1px solid #bb8e4d;
+    border-radius: 20px;
+    color: #bb8e4d;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 2rem;
+
+    &:hover {
+      border: 1px solid #111111;
+      background: transparent linear-gradient(180deg, #EFBE76 0%, #A17A43 100%) 0% 0% no-repeat padding-box;
+      color: #FFFFFF;
+    }
+  }
+
+  .arLogIn {
+    color: #FFFFFF;
+    font-size: 1rem;
+    margin: 2rem auto 20px 0;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+
+    a {
+      text-decoration: none;
+      color: #BB8E4D;
+      margin-left: 15px;
+
+      &::after {
+        content: url(../../../../assets/imgsss/admin/PlayGold.svg);
+        display: inline-block;
+        -webkit-transform: rotate(25deg);
+        -moz-transform: rotate(25deg);
+        -o-transform: rotate(25deg);
+        transform: rotate(25deg);
+        margin-left: 5px;
+      }
+    }
+  }
+
+
+}
+
+@media (max-width:1100px) {
+  .pcpLogin {
+    overflow: visible;
+
+    .pcpImg {
+      min-width: 100%;
+      opacity: .5;
+      height: 100vh;
+      position: fixed;
+
+    }
+
+    .pcpDetails {
+      position: absolute;
+      left: 50%;
+      top: 0;
+
+      transform: translateX(-50%);
+      justify-content: center;
+      width: 60%;
+      min-width: 320px;
+      background: #111111;
+      opacity: .8;
+    }
+  }
+}

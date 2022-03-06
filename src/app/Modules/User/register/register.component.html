@@ -1,0 +1,65 @@
+<!-- <app-loader-comp></app-loader-comp> -->
+<div class="container">
+    <div class="register">
+        <div class="contentDivs">
+            <div class="logoNForm">
+              <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+                <div class="logo">
+                    <img src="../../../../assets/imgsss/Logo.svg" alt="">
+                </div>
+                <div class="formContainer">
+                    <p>Create Account</p>
+                    <div class="formInputContainer">
+                        <label class="formLabel">Your name</label>
+                        <input class="formInput" type="text" formControlName="name">
+                    </div>
+                    <div class="formInputContainer">
+                        <label class="formLabel">Email address</label>
+                        <input class="formInput" type="email" formControlName="email">
+                    </div>
+                    <div class="formInputContainer">
+                        <label class="formLabel">Phone number</label>
+                        <input class="formInput" type="text" formControlName="phone">
+                    </div>
+                    <div class="formInputContainer">
+                        <label class="formLabel">Password</label>
+                        <input class="formInput" type="password" formControlName="password">
+                    </div>
+                    <div class="formInputContainer">
+                        <label class="formLabel">Re-enter password</label>
+                        <input class="formInput" type="password" formControlName="confirmpassword">
+                    </div>
+                    <button class="submitButton" type="submit">
+                        Create your Account
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="remember">
+                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                        <label for="vehicle3"> By creating an account, you agree to Video Village’s Terms and Privacy Notice.</label>
+                    </div>
+                </div>
+
+                <div class="createAcc">
+                    <p>Already Video Village User?</p>
+                    <a [routerLink]="['']">Sign In</a>
+                    <a (click)="signOut()"> SignOut</a>
+                </div>
+              </form>
+            </div>
+
+            <div class="mainImg">
+                <div class="all-img">
+                    <img src="../../../../assets/imgsss/all1.png" alt="">
+                    <img src="../../../../assets/imgsss/all2.png" alt="">
+                    <img src="../../../../assets/imgsss/all3.png" alt="">
+                    <img src="../../../../assets/imgsss/all4.png" alt="">
+                    <img src="../../../../assets/imgsss/all5.png" alt="">
+                    <img src="../../../../assets/imgsss/all6.png" alt="">
+                    <img src="../../../../assets/imgsss/all7.png" alt="">
+                    <img src="../../../../assets/imgsss/all8.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

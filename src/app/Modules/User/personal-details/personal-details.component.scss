@@ -1,0 +1,146 @@
+.allPage {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+
+  .popupBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    width: 982px;
+    height: 500px;
+    background: #0F171E;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .allDetails {
+      width: 50%;
+      padding: 4rem 5rem;
+      box-sizing: border-box;
+
+      .heading {
+        font-size: 2rem;
+        line-height: 42px;
+        color: #FFFFFF;
+        margin-bottom: 2rem;
+      }
+
+      input {
+        width: 100%;
+        border-radius: 5px;
+        padding: 15px 20px;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        background: #ffffff;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+
+      .continue {
+        width: 100%;
+        padding: .7rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin-bottom: 1.35rem;
+        margin-top: 1rem;
+        color: #0F79AF;
+        border: 1px solid #0F79AF;
+        cursor: pointer;
+        letter-spacing: 1px;
+
+        &:hover {
+          background: #0F79AF;
+          color: white;
+        }
+
+        p {
+          font-size: 16px;
+        }
+
+        img {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .image {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {}
+    }
+  }
+}
+
+
+@media (max-width:1000px) {
+  .allPage {
+    .popupBox {
+      max-width: 500px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .allDetails {
+        position: absolute;
+        width: 100%;
+        z-index: 20;
+      }
+
+      .image {
+        width: 100%;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(360deg, #000000 7%, rgba(23, 34, 44, 0.5) 100%, rgba(40, 40, 40, 0) 51.1%)
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:600px) {
+
+  .allPage {
+    .popupBox {
+      max-width: 300px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .allDetails {
+        position: absolute;
+        width: 100%;
+        z-index: 20;
+        padding: 4rem 2rem;
+      }
+    }
+  }
+}

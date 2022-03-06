@@ -1,0 +1,974 @@
+.container {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 50px;
+  margin-top: 4.5rem;
+
+  .homeAnonymous {
+    .contentDivs {
+      .topCarousel {
+        max-height: 400px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 1rem;
+
+        .slides {
+          width: 700%;
+          height: 100%;
+          display: flex;
+
+
+
+          input[name="r"] {
+            position: absolute;
+            visibility: hidden;
+
+          }
+
+          .slide {
+            width: 14.28%;
+            transition: 0.6s;
+
+            img {
+              height: 100%;
+              min-height: 120px;
+              width: 100%;
+            }
+
+            .pre,
+            .next {
+              width: 10%;
+              height: 100%;
+              position: absolute;
+              background: black;
+              z-index: 50;
+              opacity: .1;
+              cursor: pointer;
+            }
+
+            //  .nextImg {
+            // background: url(imgsss/Forward.svg);
+            // background-repeat: no-repeat;
+            // top: 50%;
+            // right: 0%;
+            // transform: translate(-50%);
+            //      }
+
+            .pre {
+              left: 0;
+            }
+
+            .next {
+              right: 0;
+            }
+          }
+
+          #r1:checked~.s1 {
+            margin-left: 0;
+          }
+
+          #r2:checked~.s1 {
+            margin-left: calc(-1 * calc(100% / 7));
+          }
+
+          #r3:checked~.s1 {
+            margin-left: calc(-2 * calc(100% / 7));
+          }
+
+          #r4:checked~.s1 {
+            margin-left: calc(-3 * calc(100% / 7));
+          }
+
+          #r5:checked~.s1 {
+            margin-left: calc(-4 * calc(100% / 7));
+          }
+
+          #r6:checked~.s1 {
+            margin-left: calc(-5 * calc(100% / 7));
+          }
+
+          #r7:checked~.s1 {
+            margin-left: calc(-6 * calc(100% / 7));
+          }
+
+
+
+        }
+
+        .navugation {
+          position: absolute;
+          bottom: 10%;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          background: transparent;
+          transition: .4s;
+
+
+
+          .selector {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #C4C4C4;
+            margin: 5px;
+            cursor: pointer;
+
+            &:hover {
+              background: #0F79AF;
+            }
+          }
+        }
+      }
+
+      .allContent {
+        display: flex;
+        flex-direction: column;
+
+        p {
+          padding-left: 5%;
+          font-size: 21px;
+          line-height: 29px;
+          letter-spacing: 0.15em;
+          margin-bottom: .7rem;
+          margin-top: 2rem;
+        }
+
+        .selectLang {
+          .gallery-lang {
+            position: relative;
+            width: 100%;
+
+            .gallery_scroller {
+              scroll-snap-type: x mandatory;
+              overflow-x: scroll;
+              overflow-y: hidden;
+              display: flex;
+              align-items: center;
+              -webkit-overflow-scrolling: touch;
+
+
+              .colored_card-lang {
+                min-width: 165.55px;
+                height: 147px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-right: 7.5px;
+                overflow: hidden;
+                margin-left: 0;
+                background-color: rgba(15, 121, 175, 0.8);
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                transition: 250ms all;
+                position: relative;
+
+                .lang-img {
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  top: 0;
+                  bottom: 0;
+                  height: 100%;
+                  width: 100%;
+                }
+
+                h2 {
+                  position: absolute;
+                  font-size: 4rem;
+                  z-index: 12;
+                  top: 47%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  line-height: 4.5rem;
+                }
+
+                span {
+                  font-size: 1rem;
+                  position: absolute;
+                  left: 50%;
+                  bottom: 7%;
+                  transform: translateX(-50%);
+                  z-index: 12;
+                  letter-spacing: 2px;
+                }
+              }
+
+              #col1,
+              #col2,
+              #col3,
+              #col4,
+              #col5,
+              #col6,
+              #col7,
+              #col8,
+              #col9,
+              #col10 {
+                &::after {
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  top: 0;
+                  bottom: 0;
+                  z-index: 10;
+
+                }
+              }
+
+              #col1,
+              #col7 {
+                &::after {
+                  background: linear-gradient(0deg, rgba(140, 101, 250, 0.53), rgba(140, 101, 250, 0.53))
+                }
+              }
+
+              #col2,
+              #col8 {
+                &::after {
+                  background: linear-gradient(0deg, rgba(193, 62, 62, 0.53), rgba(193, 62, 62, 0.53))
+                }
+              }
+
+              #col3,
+              #col9 {
+                &::after {
+                  background: linear-gradient(0deg, rgba(11, 85, 9, 0.53), rgba(11, 85, 9, 0.53))
+                }
+              }
+
+              #col4,
+              #col10 {
+                &::after {
+                  background: linear-gradient(0deg, rgba(255, 107, 0, 0.53), rgba(255, 107, 0, 0.53))
+                }
+              }
+
+              #col5 {
+                &::after {
+                  background: linear-gradient(0deg, rgba(240, 32, 169, 0.53), rgba(240, 32, 169, 0.53))
+                }
+              }
+
+              #col6 {
+                &::after {
+                  background: linear-gradient(0deg, rgba(171, 143, 2, 0.53), rgba(171, 143, 2, 0.53))
+                }
+              }
+
+              .colored_card-lang:first-child {
+                margin-left: 40px;
+              }
+
+            }
+
+            .gallery_scroller::-webkit-scrollbar {
+              display: none;
+            }
+
+            .btn {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              height: 100%;
+              height: 148px;
+              width: 4%;
+              min-width: 40px;
+              border-radius: 2px;
+              background-repeat: no-repeat;
+              z-index: 100;
+              cursor: pointer;
+            }
+
+            .forward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(180deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              right: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+                margin-top: -5px;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+
+            .backward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(90deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              left: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+                margin-top: -5px;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+          }
+        }
+
+        .genres {
+          .gallery-gen {
+            position: relative;
+            width: 100%;
+
+            .gallery_scroller {
+              scroll-snap-type: x mandatory;
+              overflow-x: scroll;
+              overflow-y: hidden;
+              display: flex;
+              align-items: center;
+              -webkit-overflow-scrolling: touch;
+
+              .colored_card {
+                position: relative;
+                height: 147px;
+                min-width: 148px;
+                display: inline-block;
+                margin-right: 7.5px;
+                overflow: hidden;
+                margin-left: 0;
+
+
+                img {
+                  border-radius: 10px;
+                  width: 100%;
+                  height: 100%;
+
+                }
+
+                span {
+                  font-size: 13px;
+                  line-height: 18px;
+                  position: absolute;
+                  bottom: 10px;
+                  left: 10px;
+                  background: transparent;
+                }
+              }
+
+              .colored_card:first-child {
+                margin-left: 40px;
+              }
+            }
+
+            .gallery_scroller::-webkit-scrollbar {
+              display: none;
+            }
+
+            .btn {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              height: 149px;
+              width: 4%;
+              min-width: 40px;
+              border-radius: 2px;
+              background-repeat: no-repeat;
+              z-index: 100;
+              cursor: pointer;
+            }
+
+            .forward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(180deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              right: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+
+            .backward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(90deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              left: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+          }
+        }
+
+        .watchlist,
+        .comingSoon {
+          .gallery-soon {
+            position: relative;
+            width: 100%;
+
+            .gallery_scroller {
+              scroll-snap-type: x mandatory;
+              overflow-x: scroll;
+              overflow-y: hidden;
+              display: flex;
+              align-items: center;
+              -webkit-overflow-scrolling: touch;
+
+              .colored_card {
+                position: relative;
+                height: 352px;
+                min-width: 226px;
+                display: inline-block;
+                margin-right: 7.5px;
+                overflow: hidden;
+                margin-left: 0;
+
+                .crown{
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 40px;
+                  width: 44px;
+                  box-sizing: border-box;
+                  padding: 5px 10px 9px 7px;
+                  border-radius: 10px 0 28px 0;
+                  background-color: #329bcf;
+                  img{
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+
+                img {
+                  border-radius: 10px;
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              .colored_card:first-child {
+                margin-left: 40px;
+              }
+            }
+
+            .gallery_scroller::-webkit-scrollbar {
+              display: none;
+            }
+
+            .btn {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              height: 352px;
+              width: 4%;
+              min-width: 40px;
+              border-radius: 2px;
+              background-repeat: no-repeat;
+              z-index: 100;
+              cursor: pointer;
+            }
+
+            .forward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(180deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              right: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+
+            .backward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(90deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              left: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+          }
+        }
+
+        .continue {
+          .gallery {
+            position: relative;
+            width: 100%;
+
+            .gallery_scroller {
+              scroll-snap-type: x mandatory;
+              overflow-x: scroll;
+              overflow-y: hidden;
+              display: flex;
+              align-items: center;
+              -webkit-overflow-scrolling: touch;
+
+              .colored_card {
+position: relative;
+                height: 164px;
+                min-width: 246px;
+                display: inline-block;
+                margin-right: 7.5px;
+                overflow: hidden;
+                margin-left: 0;
+
+                .crown{
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 40px;
+                  width: 44px;
+                  box-sizing: border-box;
+                  padding: 5px 10px 9px 7px;
+                  border-radius: 10px 0 28px 0;
+                  background-color: #329bcf;
+                  img{
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+
+                img {
+                  border-radius: 10px;
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              .colored_card:first-child {
+                margin-left: 40px;
+              }
+
+            }
+
+            .gallery_scroller::-webkit-scrollbar {
+              display: none;
+            }
+
+            .btn {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              height: 164px;
+              width: 4%;
+              min-width: 40px;
+              border-radius: 2px;
+              background-repeat: no-repeat;
+              z-index: 100;
+              cursor: pointer;
+            }
+
+            .forward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(180deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              right: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+
+            .backward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(90deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              left: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+          }
+        }
+
+        .latest,
+        .series,
+        .kids,
+        .trendingNow,
+        .comedy,
+        .thriller,
+        .drama {
+          .gallery {
+            position: relative;
+            width: 100%;
+
+            .gallery_scroller {
+              scroll-snap-type: x mandatory;
+              overflow-x: scroll;
+              overflow-y: hidden;
+              display: flex;
+              align-items: center;
+              -webkit-overflow-scrolling: touch;
+
+              .colored_card {
+                height: 164px;
+                min-width: 246px;
+                display: inline-block;
+                margin-right: 7.5px;
+                overflow: hidden;
+                margin-left: 0;
+                position: relative;
+
+                .crown{
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 40px;
+                  width: 44px;
+                  box-sizing: border-box;
+                  padding: 5px 10px 9px 7px;
+                  border-radius: 10px 0 28px 0;
+                  background-color: #329bcf;
+                  img{
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+
+                img {
+                  border-radius: 10px;
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              .colored_card:first-child {
+                margin-left: 40px;
+              }
+
+            }
+
+            .gallery_scroller::-webkit-scrollbar {
+              display: none;
+            }
+
+            .btn {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              height: 164px;
+              width: 4%;
+              min-width: 40px;
+              border-radius: 2px;
+              background-repeat: no-repeat;
+              z-index: 100;
+              cursor: pointer;
+            }
+
+            .forward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(180deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              right: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+
+            .backward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(90deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              left: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width:850px) {
+
+  .container {
+    transition: 1000ms;
+
+    .homeAnonymous {
+      .contentDivs {
+        .allContent {
+          p {
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            margin-bottom: .5rem;
+          }
+
+          .selectLang {
+            .gallery-lang {
+              .gallery_scroller {
+                .colored_card-lang {
+                  min-width: 135px;
+                  height: 120px;
+                  &:hover{
+                    transform: scale(1);
+                  }
+                }
+                .colored_card-lang:first-child {
+                  margin-left: 20px;
+                }
+
+              }
+              .btn {
+                height: 122px;
+                width: 2%;
+              }
+            }
+          }
+
+          .continue,
+          .watchedMovi,
+          .latest,
+          .series,
+          .kids,
+          .trendingNow,
+          .dubbed,
+          .topRated,
+          .comedy,
+          .hindi,
+          .telugu,
+          .thriller,
+          .kannada,
+          .horror,
+          .english,
+          .drama,
+          .malayalam,
+          .tamil {
+            .gallery {
+              .gallery_scroller {
+                .colored_card {
+                  height: 130px;
+                  min-width: 195px;
+                  max-width: 195px;
+                  &:hover{
+                    transform: scale(1);
+                  }
+                }
+                .colored_card:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                height: 132px;
+                width: 2vw;
+              }
+            }
+          }
+
+          .genres {
+            .gallery-gen {
+              .gallery_scroller {
+                .colored_card {
+                  height: 150px;
+                  min-width: 150px;
+                  max-width: 150px;
+                  &:hover{
+                    transform: scale(1);
+                  }
+                }
+
+                .colored_card:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                height: 152px;
+              }
+            }
+          }
+
+          .watchlist,
+          .comingSoon {
+            .gallery-soon {
+              .gallery_scroller {
+                .colored_card {
+                  height: 249px;
+                  min-width: 160px;
+                  max-width: 160px;
+                  &:hover{
+                    transform: scale(1);
+                  }
+                }
+                .colored_card:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                height: 251px;
+                width: 2vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+::ng-deep .progress {
+  background-image: linear-gradient(90deg, #24222269, rgb(50 50 50 / 45%), rgb(50 50 50 / 94%)) !important;
+}
+
+@media (max-width:550px) {
+
+  .container {
+    transition: 1000ms;
+
+    .homeAnonymous {
+      .contentDivs {
+        .allContent {
+          p {
+            font-size: 1rem;
+            margin-top: .8rem;
+            margin-bottom: 0;
+            line-height: 1;
+          }
+
+          .selectLang {
+            .gallery-lang {
+              .gallery_scroller {
+                .colored_card-lang {
+                  min-width: 112.5px;
+                  height: 100px;
+                }
+
+              }
+
+              .btn {
+                display: none;
+              }
+            }
+          }
+
+          .continue,
+          .watchedMovi,
+          .latest,
+          .series,
+          .kids,
+          .trendingNow,
+          .dubbed,
+          .topRated,
+          .comedy,
+          .hindi,
+          .telugu,
+          .thriller,
+          .kannada,
+          .horror,
+          .english,
+          .drama,
+          .malayalam,
+          .tamil {
+            .gallery {
+              .gallery_scroller {
+                .colored_card {
+                  height: 100px;
+                  min-width: 150px;
+                  max-width: 150px;
+                }
+
+                .colored_card:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                display: none;
+              }
+            }
+          }
+
+          .genres {
+            .gallery-gen {
+              .gallery_scroller {
+                .colored_card {
+                  height: 130px;
+                  min-width: 130px;
+                  max-width: 130px;
+                }
+
+                .colored_card:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                display: none;
+              }
+            }
+          }
+
+          .watchlist,
+          .comingSoon {
+            .gallery-soon {
+              .gallery_scroller {
+                .colored_card {
+                  height: 220px;
+                  min-width: 140px;
+                  max-width: 140px;
+                }
+
+                .colored_card:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width:500px){
+  .container{
+    margin-top: 0;
+  }
+}

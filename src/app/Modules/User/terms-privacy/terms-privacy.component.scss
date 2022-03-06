@@ -1,0 +1,61 @@
+.container {
+    padding: 50px 80px;
+
+    .termsAnd {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            font-size: 21px;
+            line-height: 29px;
+            margin-bottom: 17px;
+        }
+
+        .contentDivs {
+            display: flex;
+            flex-direction: row;
+
+            .termText {
+                width: 65%;
+                font-size: 15px;
+                line-height: 20px;
+                text-align: justify;
+                margin-right: 20px;
+            }
+
+            .image {
+                margin: auto;
+
+            }
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .container {
+        padding: 50px 60px;
+        .termsAnd {
+            .contentDivs {
+                flex-flow: wrap-reverse;
+                .termText {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 500px) {
+    .container {
+        padding: 40px 25px 40px 30px;
+        .termsAnd {
+            .contentDivs {
+                .image{
+                    img{
+                        max-width: 180px;
+                        height: 180px;
+                    }
+                }
+            }
+        }
+    }
+}

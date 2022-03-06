@@ -1,0 +1,357 @@
+<!-- <h1 mat-dialog-title>You are from</h1>
+
+<div mat-dialog-content>
+
+    <p>What's your favorite city?</p>
+
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Get Food</button>
+    <button mat-button [mat-dialog-close]="data.city" cdkFocusInitial>Get City</button>
+</div> -->
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.92)" size = "medium" color = "#9c9918" type = "ball-fussion" [fullScreen] = "true">
+  <div>
+    <img src="../../../../assets/imgsss/logo/newlogo.png" width="150" />
+    <p style="color: #9c9918" >Please wait....!!! </p>
+  </div>
+</ngx-spinner>
+
+
+
+
+<!-- gat started & sign In -->
+<div class="popupBox1" mat-dialog-content *ngIf="!afterSignUp">
+
+  <!-- ***** Details Part ***** -->
+  <div class="allDetails">
+
+    <!-- //// top sign In or Get Started -->
+    <div class="signInNstarted" *ngIf="!emailOtpView && !otpView">
+      <div class="getStarted" [ngClass]="{ 'getStarted-active': getStatrtedTab }" (click)="selectViews('register')">Get
+        Started</div>
+      <div class="signIn" [ngClass]="{ 'signIn-active': signInTab }" (click)="selectViews('login')">Sign In</div>
+    </div>
+
+
+    <!--///// First View //////-->
+    <div class="firstView" *ngIf="getStartedView1">
+      <div class="usingVia">
+        <div class="viaEmail viaBtn" (click)="selectViews('email')">
+          <p>Using via Email Address</p>
+          <img src="../../../../assets/imgsss/onBoarding/arrow.svg" alt="">
+        </div>
+        <div class="viaNumber viaBtn" (click)="selectViews('phone')">
+          <p>Using via Phone Number</p>
+          <img src="../../../../assets/imgsss/onBoarding/arrow.svg" alt="">
+
+        </div>
+      </div>
+      <div class="or">
+        <hr class="white50">
+        <p class="or-text">or</p>
+        <hr class="white50">
+      </div>
+      <div class="signInWith">
+        <button class="facebookClass" (click)="signInWithFacebook()">
+          <img src="../../../../assets/imgsss/facebook.svg" alt=""></button>
+        <button class="googleClass" (click)="signInWithGoogle()">
+          <img src="../../../../assets/imgsss/Vector.svg" alt=""></button>
+      </div>
+    </div>
+
+    <!-- <div class="firstView" *ngIf="signInView1">
+            <div class="usingVia">
+                <div class="viaEmail viaBtn" (click)="selectViews('email')">
+                    <p>Using via Email Address</p>
+                    <img src="../../../../assets/imgsss/onBoarding/arrow.svg" alt="">
+                </div>
+                <div class="viaNumber viaBtn" (click)="selectViews('phone')">
+                    <p>Using via Phone Number</p>
+                    <img src="../../../../assets/imgsss/onBoarding/arrow.svg" alt="">
+
+                </div>
+            </div>
+            <div class="or">
+                <hr class="white50">
+                <p class="or-text">or</p>
+                <hr class="white50">
+            </div>
+            <div class="signInWith">
+                <button class="facebookClass" (click)="signInWithFacebook()">
+                    <img src="../../../../assets/imgsss/facebook.svg" alt=""></button>
+                <button class="googleClass" (click)="signInWithGoogle()">
+                    <img src="../../../../assets/imgsss/Vector.svg" alt=""></button>
+            </div>
+        </div> -->
+
+
+    <!--///// Second View via email //////-->
+    <div class="secondView" *ngIf="signView">
+      <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+        <input type="email" placeholder="Email Address" formControlName="username"
+          [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback valid-error" style="margin-bottom: 20px;">
+          <div *ngIf="f.username.errors.required">*Email is required</div>
+        </div>
+        <input type="password" placeholder="Password" formControlName="password"
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback valid-error" style="margin-bottom: 20px;">
+          <div *ngIf="f.password.errors.required">*Password is required</div>
+        </div>
+
+        <div class="rememberForgot">
+          <div class="remember">
+            <input type="checkbox" id="remember" name="remember" value="Boat">
+            <label for="remember">Remember Me</label>
+          </div>
+          <div class="forgetPass">
+            <p>Forget password</p>
+            <img src="../../../../assets/imgsss/help.svg" alt="">
+          </div>
+        </div>
+
+        <button class="contBtn" type="submit">
+          <p>Continue</p>
+          <img src="../../../../assets/imgsss/onBoarding/arrow.svg" alt="">
+        </button>
+
+        <div class="createAcc">
+          <p>By signing up, you agree to Video Village’s &nbsp;
+            <a >Terms and Privacy Notice.</a>
+          </p>
+        </div>
+
+        <!-- <div class="createAcc">
+                  <p>By continuing, you agree to Video Village’s &nbsp;
+                      <a>Terms and Privacy Notice.</a>
+                  </p>
+              </div> -->
+      </form>
+    </div>
+
+
+    <!--///// third View via Phon numbar //////-->
+    <div class="thirdView" *ngIf="getphonenumberView">
+      <form [formGroup]="Form1" (ngSubmit)="onSubmit1()">
+        <input type="number" placeholder="Phone Number" formControlName="phone"
+          [ngClass]="{ 'is-invalid': submitted && f1.phone.errors }">
+        <div *ngIf="submitted && f1.phone.errors" class="invalid-feedback valid-error" style="margin-bottom: 20px;">
+          <div *ngIf="f1.phone.errors.required">*Phone number is required</div>
+        </div>
+        <input type="password" placeholder="Password" formControlName="password"
+          [ngClass]="{ 'is-invalid': submitted && f1.password.errors }">
+        <div *ngIf="submitted && f1.password.errors" class="invalid-feedback valid-error" style="margin-bottom: 20px;">
+          <div *ngIf="f1.password.errors.required">*Password is required</div>
+        </div>
+
+        <button class="contBtn" type="submit">
+          <p>Continue</p>
+          <img src="../../../../assets/imgsss/onBoarding/arrow.svg" alt="">
+        </button>
+
+
+        <div class="createAcc">
+          <input type="checkbox" formControlName="terms">
+          <p>By signing up, you agree to Video Village’s &nbsp;
+            <a>Terms and Privacy Notice.</a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <!--///// Fourth View via Phon numbar //////-->
+    <div class="thirdView" *ngIf="getEmailView">
+      <form [formGroup]="Form2" (ngSubmit)="onSubmit2()">
+        <input type="email" placeholder="Email Address" formControlName="email"
+          [ngClass]="{ 'is-invalid': submitted && f2.email.errors }">
+        <div *ngIf="submitted && f2.email.errors" class="invalid-feedback valid-error" style="margin-bottom: 20px;">
+          <div *ngIf="f2.email.errors.required">*Email is required</div>
+        </div>
+        <input type="password" placeholder="Password" formControlName="password"
+          [ngClass]="{ 'is-invalid': submitted && f2.password.errors }">
+        <div *ngIf="submitted && f2.password.errors" class="invalid-feedback valid-error" style="margin-bottom: 20px;">
+          <div *ngIf="f2.password.errors.required">*Password is required</div>
+        </div>
+
+        <button class="contBtn" type="submit">
+          <p>Continue</p>
+          <img src="../../../../assets/imgsss/onBoarding/arrow.svg" alt="">
+        </button>
+
+
+        <div class="createAcc">
+          <input type="checkbox" formControlName="terms">
+          <p>By signing up, you agree to Video Village’s &nbsp;
+            <a>Terms and Privacy Notice.</a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+
+    <!-- ****** Mobile otp verify ****** -->
+    <div class="otpVerifyNum" *ngIf="otpView && form3loading">
+      <form [formGroup]="Form3" (ngSubmit)="onSubmit3(1)">
+        <div class="headingOtp">Verify phone number</div>
+        <div class="createAcc" style="margin-bottom:1.3rem;">
+          <p>Please enter the 4 digit code sent to your phone number +91 {{signInPhone}}&nbsp;
+            <a>(change)</a>
+          </p>
+        </div>
+        <input style="letter-spacing: 1px; text-align: center;" formControlName="verifycode" type="number"
+          placeholder="Enter OTP">
+        <div *ngIf="submitted && f3.verifycode.errors" class="invalid-feedback valid-error"
+          style="margin-bottom: 20px;">
+          <div *ngIf="f3.verifycode.errors.required">*OTP is required</div>
+        </div>
+        <button class="contBtn" type="submit">
+          <p>Continue</p>
+          <img src="../../../../assets/imgsss/onBoarding/arrow.svg" alt="">
+        </button>
+        <div class="createAcc" style="text-align: center;">
+          <p>Didn’t receive the OTP ?&nbsp;
+            <a>Resend</a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <!-- ****** Email otp verify ****** -->
+    <div class="otpVerifyEmail" *ngIf="emailOtpView">
+      <form [formGroup]="Form3" (ngSubmit)="onSubmit3(2)">
+        <div class="headingOtp">Verify email address</div>
+        <div class="createAcc" style="margin-bottom:1.5rem;">
+          <p style="font-size: .95rem;">To verify your email address, we’ve sent a One Time Password (OTP) to
+            {{signInemail}}&nbsp;
+            <a>(change)</a>
+          </p>
+        </div>
+        <input style="letter-spacing: 1px; text-align: center;" formControlName="verifycode" type="number"
+          placeholder="Enter OTP">
+        <div *ngIf="submitted && f3.verifycode.errors" class="invalid-feedback valid-error"
+          style="margin-bottom: 20px;">
+          <div *ngIf="f3.verifycode.errors.required">*OTP is required</div>
+        </div>
+        <button class="contBtn" type="submit">
+          <p>Continue</p>
+          <img src="../../../../assets/imgsss/onBoarding/arrow.svg" alt="">
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <!--***** imgg part *****-->
+  <div class="imgNdetails">
+
+    <!--///// for Get Started //////-->
+    <div class="imgNdetailsSS" *ngIf="getStartedImage">
+      <img class="obj-fit" src="../../../../assets/imgsss/onBoarding/img1.svg" alt="Get Started">
+      <div class="about">
+        <h2 class="heading">Welcome to Video Village</h2>
+        <p class="description">Premium unlimited TV shows, latest movie blockbusters, series and full on
+          entertainment,
+          is just a step away</p>
+      </div>
+    </div>
+
+    <!--///// for sign Up via email //////-->
+    <div class="imgNdetailsSS" *ngIf="signWithEmailImage">
+      <img class="obj-fit" src="../../../../assets/imgsss/onBoarding/img1.svg" alt="Get Started">
+      <div class="about">
+        <h2 class="heading">Sign Up via Email Address</h2>
+        <p class="description">You can start watching latest movies, series and
+          unlimited TV shows ANYTIME, ANYWHERE</p>
+      </div>
+    </div>
+
+    <!--///// for sign Up via phone //////-->
+    <div class="imgNdetailsSS" *ngIf="signWithPhoneImage">
+      <img class="obj-fit" src="../../../../assets/imgsss/onBoarding/img1.svg" alt="Get Started">
+      <div class="about">
+        <h2 class="heading">Sign Up via Phone Number</h2>
+        <p class="description">You can start watching latest movies, series and
+          unlimited TV shows ANYTIME, ANYWHERE</p>
+      </div>
+    </div>
+
+
+    <!--///// for Sign In /////-->
+    <div class="imgNdetailsSS" *ngIf="signImageView">
+      <img class="obj-fit" src="../../../../assets/imgsss/onBoarding/img2.svg" alt="Sign In">
+      <div class="about">
+        <h2 class="heading">By Signing In</h2>
+        <p class="description">You can have your own watchlist, and continue watching, and unlimited
+          entertainment.</p>
+      </div>
+    </div>
+
+    <!--///// for number otp verify /////-->
+    <div class="imgNdetailsSS" *ngIf="mobileOtpImageView">
+      <img class="obj-fit" src="../../../../assets/imgsss/onBoarding/img3.svg" alt="Sign In">
+      <div class="about">
+        <h2 class="heading">Authenticate Yourself</h2>
+        <p class="description">You need to check and enter the OTP sent to your mobile number for
+          verification purpose.</p>
+      </div>
+    </div>
+
+    <!--///// for number otp verify /////-->
+    <div class="imgNdetailsSS" *ngIf="emailOtpImageView">
+      <img class="obj-fit" src="../../../../assets/imgsss/onBoarding/img4.svg" alt="Sign In">
+      <div class="about">
+        <h2 class="heading">Authentication Required</h2>
+        <p class="description">You need to check and enter the OTP sent to your email address for
+          verification purpose.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- close popup -->
+
+  <div class="closePopup" (click)="onNoClick()" style="cursor: pointer;">
+    <img src="../../../../assets/imgsss/x.svg" alt="close">
+  </div>
+</div>
+
+
+<div class="popupBox" *ngIf="afterSignUp">
+  <form [formGroup]="Form4" (ngSubmit)="onSubmit4()">
+    <div class="allDetails" >
+      <div class="heading">
+        Personal Details
+      </div>
+      <input type="text" placeholder="First Name" formControlName="first_name"
+        [ngClass]="{ 'is-invalid': submitted && f4.first_name.errors }">
+      <div *ngIf="submitted && f4.first_name.errors" class="invalid-feedback valid-error" style="margin-bottom: 20px;">
+        <div *ngIf="f4.first_name.errors.required">*First Name is required</div>
+      </div>
+      <input type="text" placeholder="Middle Name" formControlName="middle_name"
+        [ngClass]="{ 'is-invalid': submitted && f4.middle_name.errors }">
+      <input type="text" placeholder="Last Name" formControlName="last_name"
+        [ngClass]="{ 'is-invalid': submitted && f4.last_name.errors }">
+      <div *ngIf="submitted && f4.last_name.errors" class="invalid-feedback valid-error" style="margin-bottom: 20px;">
+        <div *ngIf="f4.last_name.errors.required">*Last Name is required</div>
+      </div>
+      <input type="email" placeholder="Email Address" formControlName="email"
+        [ngClass]="{ 'is-invalid': submitted && f4.email.errors }" [hidden]="signInemail">
+      <div *ngIf="submitted && f4.email.errors" class="invalid-feedback valid-error" style="margin-bottom: 20px;">
+        <div *ngIf="f4.email.errors.required">*Email is required</div>
+      </div>
+      <input type="number" placeholder="Phone Number" formControlName="phone"
+        [ngClass]="{ 'is-invalid': submitted && f4.phone.errors }" [hidden]="signInPhone">
+      <div *ngIf="submitted && f4.email.errors" class="invalid-feedback valid-error" style="margin-bottom: 20px;">
+        <div *ngIf="f4.phone.errors.required">*Phone is required</div>
+      </div>
+
+      <button class="continue" type="submit">
+        <p>Continue</p>
+        <img src="../../../../assets/imgsss/onBoarding/arrow.svg" alt="">
+      </button>
+    </div>
+  </form>
+  <div class="image">
+    <img src="../../../../assets/imgsss/Group 125.svg" alt="">
+  </div>
+</div>

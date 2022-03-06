@@ -1,0 +1,1083 @@
+<!-- <app-loader-comp></app-loader-comp> -->
+<!-- <ngx-spinner bdColor = "rgba(0, 0, 0, 0.92)" size = "medium" color = "#9c9918" type = "ball-fussion" [fullScreen] = "true">
+  <div>
+    <img src="../../../../assets/imgsss/logo/newlogo.png" width="150" />
+    <p style="color: #9c9918" >Please wait.... we are making your content ready...!!! </p>
+  </div>
+</ngx-spinner> -->
+
+<div class="container">
+  <div class="homeAnonymous">
+    <div class="contentDivs">
+      <div class="topCarousel">
+        <div class="navugation">
+          <label for="r1" class="selector" checked (click)="changeCarousal(0)"></label>
+          <label for="r2" class="selector" (click)="changeCarousal(1)"></label>
+          <label for="r2" class="selector" (click)="changeCarousal(2)"></label>
+        </div>
+        <div #paginated_carousal>
+          <div class="carousel_scroll" *ngIf="!carouselPoster">
+            <div class="carousal_colored_card" style="height: 50vh !important;">
+              <!-- <img [src]="carousel.PosterUrl"> -->
+              <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                      'border-radius': '5px',
+                      height: '100%',
+                      'background-color': '#323232',
+                      border: '1px solid #323232',
+                      'animation-duration': '2s'
+                    }"> </ngx-skeleton-loader>
+            </div>
+
+          </div>
+          <div class="carousel_scroll" *ngIf="carouselPoster" style="height: 50vh;">
+            <!-- <div *ngIf="moviesLength > 0" style="display: inherit;">
+                    <div class="colored_card">
+                      <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                        'border-radius': '5px',
+                        height: '100%',
+                        'background-color': '#323232',
+                        border: '1px solid #323232',
+                        'animation-duration': '2s'
+                      }" > </ngx-skeleton-loader>
+                    </div>
+                  </div>
+                  <div *ngIf="moviesLength <= 0">
+                    <div class="colored_card" *ngFor="let posters of movies">
+                        <Img src="{{posters.Poster.Url}}" (click)="getPageById(posters.MovieId)">
+                    </div>
+                  </div> -->
+            <!-- <div class="carousal_colored_card" *ngFor="let carousel of carouselPoster">
+                        <img [src]="carouselPoster[0].PosterUrl">
+                    </div> -->
+            <div class="carousal_colored_card" style="height: 50vh;">
+              <img [src]="carouselPoster[0].PosterUrl" style="height: 50vh;"
+                (click)="getPageById(carouselPoster[0].Id, (carouselPoster[0].Type) == 1 ? 'series' : 'movies')">
+            </div>
+            <div class="carousal_colored_card" style="height: 50vh;">
+              <img [src]="carouselPoster[1].PosterUrl" style="height: 50vh;"
+                (click)="getPageById(carouselPoster[0].Id, (carouselPoster[0].Type) == 1 ? 'series' : 'movies')">
+            </div>
+            <div class="carousal_colored_card" style="height: 50vh;">
+              <img [src]="carouselPoster[2].PosterUrl" style="height: 50vh;"
+                (click)="getPageById(carouselPoster[0].Id, (carouselPoster[0].Type) == 1 ? 'series' : 'movies')">
+            </div>
+            <!-- <div class="carousal_colored_card">
+                            <img id = "img" src="assets/imgsss/img 007.jpg" >
+                    </div> -->
+          </div>
+          <!-- <span class="btn backward_show_list">
+                    <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                        <Img src="assets/imgsss/backward_show_list.svg">
+                    </div>
+                </span>
+                <span class="btn forward_show_list">
+                    <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                        <Img src="assets/imgsss/forward_show_list.svg">
+                    </div>
+                </span> -->
+        </div>
+
+
+      </div>
+      <div class="allContent">
+        <div class="selectLang">
+          <p>Select Your language</p>
+          <div #home_paginated_gallery class="gallery-lang">
+            <div class="gallery_scroller">
+              <div class="colored_card-lang" id="col1" (click)="langSelect(6)">
+                <img class="lang-img" src="../../../../assets/imgsss/language-img/li1.png" alt="">
+                <h2>E</h2>
+                <span>ENGLISH</span>
+              </div>
+              <div class="colored_card-lang" id="col2" (click)="langSelect(5)">
+                <img class="lang-img" src="../../../../assets/imgsss/language-img/li2.png" alt="">
+                <h2>ह</h2>
+                <span>HINDI</span>
+              </div>
+              <div class="colored_card-lang" id="col3" (click)="langSelect(2)">
+                <img class="lang-img" src="../../../../assets/imgsss/language-img/li3.png" alt="">
+                <h2>తె</h2>
+                <span>TELUGU</span>
+              </div>
+              <div class="colored_card-lang" id="col4" (click)="langSelect(1)">
+                <img class="lang-img" src="../../../../assets/imgsss/language-img/li4.png" alt="">
+                <h2>ಕ</h2>
+                <span>KANNADA</span>
+              </div>
+              <div class="colored_card-lang" id="col5" (click)="langSelect(3)">
+                <img class="lang-img" src="../../../../assets/imgsss/language-img/li5.png" alt="">
+                <h2>മ</h2>
+                <span>MALAYALAM</span>
+              </div>
+              <div class="colored_card-lang" id="col6" (click)="langSelect(4)">
+                <img class="lang-img" src="../../../../assets/imgsss/language-img/li6.png" alt="">
+                <h2>த</h2>
+                <span>TAMIL</span>
+              </div>
+              <div class="colored_card-lang" id="col7" (click)="langSelect(7)">
+                <img class="lang-img" src="../../../../assets/imgsss/language-img/li1.png" alt="">
+                <h2>K</h2>
+                <span>KOREAN</span>
+              </div>
+              <div class="colored_card-lang" id="col8" (click)="langSelect(8)">
+                <img class="lang-img" src="../../../../assets/imgsss/language-img/li2.png" alt="">
+                <h2>R</h2>
+                <span>RUSSIAN</span>
+              </div>
+              <!-- <div class="colored_card-lang" id="col9">
+                                <img class="lang-img" src="../../../../assets/imgsss/language-img/li3.png" alt="">
+                                <h2>తె</h2>
+                                <span>TELUGU</span>
+                            </div>
+                            <div class="colored_card-lang" id="col10">
+                                <img class="lang-img" src="../../../../assets/imgsss/language-img/li4.png" alt="">
+                                <h2>ಕ</h2>
+                                <span>KANNADA</span>
+                            </div> -->
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="watchedMovi" *ngIf="watchedSet && watchedMoviesLength != -1">
+          <p>Watched Movies</p>
+          <div #home_paginated_gallery class="gallery">
+            <div class="gallery_scroller">
+              <div *ngIf="watchedMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="watchedMoviesLength > 0" style="display: inherit;">
+                <!-- <div> -->
+                <div class="colored_card" *ngFor="let posters of watchedMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id,'', posters.TimeCode)">
+                  <!-- <div class="meter">
+                                    <span style="width: 25%"></span>
+                                  </div> -->
+                  <!-- <div class="wrapper">
+                                    <div class="progress-bar"> -->
+                  <span class="progress-bar-fill">
+                    <div class="red-progress" style="width: {{posters?.Percentage}}%"></div>
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+
+                  <!-- </div>
+                                  </div> -->
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="latest">
+          <p>Latest</p>
+          <div #home_paginated_gallery class="gallery">
+            <div class="gallery_scroller">
+              <div *ngIf="latestLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                              'border-radius': '5px',
+                              height: '100%',
+                              'background-color': '#323232',
+                              border: '1px solid #323232',
+                              'animation-duration': '2s'
+                            }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="latestLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of latest">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+
+        </div>
+        <div class="series">
+          <p>Series</p>
+          <div #home_paginated_gallery class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of series">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id, 'series')">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="seriesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="seriesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of series">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id, 'series')">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+
+        </div>
+        <div class="kids">
+          <p>Kids</p>
+          <div #home_paginated_gallery class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of moviePoster">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="kidsLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="kidsLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of kids">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="genres">
+          <p>Genres</p>
+          <div #home_paginated_gallery class="gallery-gen">
+            <div class="gallery_scroller">
+              <div class="colored_card">
+                <Img src="assets/imgsss/a2.png">
+                <span>Action & <br> Adventure</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a8.png">
+                <span> Kids</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a6.png">
+                <span>Biopic</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a4.png">
+                <span>Romance</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a8.png">
+                <span>Comedy</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a11.png">
+                <span>Drama</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a10.png">
+                <span>Family</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a9.png">
+                <span>Horror</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a8.png">
+                <span>Horror</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a7.png">
+                <span>Horror</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a6.png">
+                <span>Horror</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a5.png">
+                <span></span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a4.png">
+                <span>Horror</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a3.png">
+                <span>Horror</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a2.png">
+                <span>Horror</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a1.png">
+                <span>Horror</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a9.png">
+                <span>Horror</span>
+              </div>
+              <div class="colored_card">
+                <Img src="assets/imgsss/a10.png">
+                <span>Horror</span>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <!-- <div class="trendingNow">
+                    <p>Trending Now</p>
+                    <div #home_paginated_gallery class="gallery">
+                        <div class="gallery_scroller">
+                          <div *ngIf="trendingNowLength <= 0" style="display: inherit;">
+                            <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                              <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }" > </ngx-skeleton-loader>
+                            </div>
+                          </div>
+                          <div *ngIf="trendingNowLength == 0" style="display: inherit;">
+                            <div class="colored_card" *ngFor="let posters of trendingNow">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                          </div>
+                        </div>
+                        <span class="btn backward_show_list">
+                            <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                                <Img src="assets/imgsss/backward_show_list.svg">
+                            </div>
+                        </span>
+                        <span class="btn forward_show_list">
+                            <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                                <Img src="assets/imgsss/forward_show_list.svg">
+                            </div>
+                        </span>
+                    </div>
+                </div> -->
+        <div class="comingSoon">
+          <p>Coming Soon</p>
+          <div #home_paginated_gallery class="gallery-soon">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of moviePoster">
+                                <Img class="obj-fit" src="{{posters.PosterUrl}}"
+                                    (click)="getPageById(posters.contentId)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="comingSoonLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="comingSoonLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of comingSoon">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="dubbed">
+          <p>Dubbed Movies</p>
+          <div #home_paginated_gallery class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of moviePoster">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="dubbedMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="dubbedMoviesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of dubbedMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="topRated">
+          <p>Top Rated Movies</p>
+          <div id="paginated_gallery10" class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of moviePoster">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="topRatedMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="topRatedMoviesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of topRatedMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="comedy">
+          <p>Comedy Movies</p>
+          <div #home_paginated_gallery class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of comdeyMovies">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="comdeyMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="comdeyMoviesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of comdeyMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="hindi">
+          <p>Hindi Movies</p>
+          <div #home_paginated_gallery class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of hindiMovies">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="hindiMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="hindiMoviesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of hindiMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="telugu">
+          <p>Telugu Movies</p>
+          <div #home_paginated_gallery class="gallery">
+            <div class="gallery_scroller">
+              <div *ngIf="teluguMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="teluguMoviesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of teluguMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="thriller">
+          <p>Thriller Movies</p>
+          <div #home_paginated_gallery class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of trillerMovies">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="trillerMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="trillerMoviesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of trillerMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="kannada">
+          <p>Kannada Movies</p>
+          <div #home_paginated_gallery class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of kanMovies">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="kanMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="kanMoviesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of kanMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="horror">
+          <p>Horror Movies</p>
+          <div #home_paginated_gallery class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of horrorMovies">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="horrorMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="horrorMoviesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of horrorMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="english">
+          <p>English Movies</p>
+          <div #home_paginated_gallery class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of englishMovies">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="englishMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="englishMoviesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of englishMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="drama">
+          <p>Drama Movies</p>
+          <div #home_paginated_gallery class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of dramaMovies">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="dramaMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="dramaMoviesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of dramaMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="malayalam">
+          <p>Malayalam Movies</p>
+          <div #home_paginated_gallery class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of MalMovies">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="MalMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="MalMoviesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of MalMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="tamil">
+          <p>Tamil Movies</p>
+          <div #home_paginated_gallery class="gallery">
+            <!-- <div class="gallery_scroller">
+                            <div class="colored_card" *ngFor="let posters of tamilMovies">
+                                <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                            </div>
+                        </div> -->
+            <div class="gallery_scroller">
+              <div *ngIf="tamilMoviesLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                'border-radius': '5px',
+                                height: '100%',
+                                'background-color': '#323232',
+                                border: '1px solid #323232',
+                                'animation-duration': '2s'
+                              }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="tamilMoviesLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of tamilMovies">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                  <span class="progress-bar-fill" style="height: 0;">
+                    <div>
+                      <span>{{posters.Title}}</span>
+                    </div>
+                  </span>
+                  <div class="crown">
+                    <img src="../../../../assets/imgsss/crown.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <video
+id="my-video"
+class="video-js vjs-default-button vjs-big-play-centered"
+  controls
+  playsinline
+  preload="auto"
+  width="640"
+  height="480"
+  data-setup="{}"
+>
+  <source src="{{this.url}}" type="application/x-mpegURL"/>
+  <p class="vjs-no-js">
+    To view this video please enable JavaScript, and consider upgrading to a
+    web browser that
+    <a href="https://videojs.com/html5-video-support/" target="_blank"
+    >supports HTML5 video</a
+    >
+  </p> -->
+<!-- </video> -->
+<!-- <app-vjs-player [options]="{ autoplay: true, controls: true, sources: [{ src: '/path/to/video.mp4', type: 'video/mp4' }]}"></app-vjs-player> -->
+<!-- <video id='sxmvideo' width='600' height='300' class="video-js vjs-default-skin" controls>
+  <source
+     [src]="url"
+     type="application/x-mpegURL">
+</video> -->

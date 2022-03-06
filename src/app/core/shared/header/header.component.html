@@ -1,0 +1,64 @@
+<div class="header" id="header">
+    <div class="item-left">
+        <div class="logo">
+            <img src="../../../../assets/imgsss/logo/newlogo.png" alt="Video Village">
+        </div>
+        <div class="nav-menue">
+            <a routerLink="" class="element">Home</a>
+            <a routerLink="/movies" class="element">Movies</a>
+            <a routerLink="/series" class="element">Series</a>
+            <a routerLink="/kids" class="element">Kids</a>
+            <a routerLink="/shorts" class="element">Shorts</a>
+        </div>
+    </div>
+    <div class="nav-user-item-right">
+        <div class="relative-div">
+            <div class="search">
+                <!-- <input type="text"
+           placeholder="search"> -->
+                <app-autocomplete>
+                </app-autocomplete>
+                <img src=".../../../../assets/imgsss/x.svg" alt="cancel">
+            </div>
+        </div>
+        <!-- <div class="selectLanguage">
+            <img src=".../../../../assets/imgsss/global 1.svg" alt="Select Language">
+            <select name="select_lang" id="" (change)="getLanguage($event.target.value)">
+                <option value="1">EN</option>
+                <option value="2">HI</option>
+                <option value="3">த</option>
+                <option value="4">മ</option>
+                <option value="5">ಕ</option>
+                <option value="6">తె</option>
+            </select>
+        </div> -->
+        <div class="user-signIn" style="cursor: pointer;">
+            <div class="signIn" *ngIf="!isSignedIn" (click)="openDialog()">
+                Sign In
+            </div>
+            <div class="user-image" *ngIf="isSignedIn">
+                <img src="../../../../assets/imgsss/unnamed.gif" alt="user" (click)="profilePage()">
+            </div>
+        </div>
+        <div class="logout-N-all" *ngIf="isSignedIn">
+            <button mat-icon-button [matMenuTriggerFor]="menu" [disableRipple]="true"
+                aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" class="myMenu">
+                <!-- <button mat-menu-item>
+                    <mat-icon></mat-icon>
+                    <span></span>
+                </button> -->
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>logout</mat-icon>
+                    <span>LogOut</span>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+</div>
+<div class="only-for-height" style="height: 7rem;"></div>
+<!-- <app-loader-comp></app-loader-comp> -->
+<router-outlet></router-outlet>
+<app-footer></app-footer>

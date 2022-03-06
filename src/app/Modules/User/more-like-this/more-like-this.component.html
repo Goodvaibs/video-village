@@ -1,0 +1,84 @@
+<!-- <app-loader-comp></app-loader-comp> -->
+<div class="container">
+    <div class="homeAnonymous">
+        <div class="contentDivs">
+            <div class="topPic">
+                <div class="lang-text">
+                    <span class="text-simple">Watch in</span>
+                    <!-- <span class="text-lang">తెలుగు</span> -->
+                    <span class="text-lang">{{title}}</span>
+                </div>
+                <div class="mainImg">
+                    <img src="../../../../assets/imgsss/b1.png" alt="">
+                </div>
+            </div>
+            <div class="search-filter">
+                <div class="search">
+                    <input type="text" placeholder="Search movie">
+                    <img src="../../../../assets/imgsss/x.svg" alt="">
+                </div>
+                <div class="filter">
+                    <div class="fill">
+                        <select name="Category" id="" (change)="changeCategory($event.target.value)">
+                            <option value="">Category</option>
+                            <option *ngFor="let cat of category" [selected]="cat.id == filterCategory" [value]="cat.id">{{cat.name}}</option>
+                        </select>
+                    </div>
+                    <div class="fill">
+                        <select name="Preference" id="" (change)="changeCategory($event.target.value)">
+                            <option value="">Preference</option>
+                            <option *ngFor="let pref of preferences" [value]="pref.id">{{pref.name}}</option>
+                        </select>
+                    </div>
+                    <div class="fill">
+                        <select name="Language" id="" (change)="changeLang($event.target.value)">
+                            <option value="">Language</option>
+                            <option *ngFor="let langs of languages" [selected]="langs.id == contentId" [value]="langs.id" >{{langs.name}}</option>
+                        </select>
+                    </div>
+                    <div class="fill">
+                        <select name="Genre" id="" (change)="changeGenre($event.target.value)">
+                            <option value="">Genre</option>
+                            <option *ngFor="let gen of genre" [selected]="gen.id == filterKey" [value]="gen.id">{{gen.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="allContent">
+                <div class="allMovies">
+                    <div id="paginated_gallery2" class="gallery">
+                        <div class="gallery_scroller">
+                            <div *ngIf="dataLength <= 0" style="display: contents;">
+                              <div class="colored_card" *ngFor='let in of counter(20) ;let i = index'>
+                                <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                                  'border-radius': '5px',
+                                  height: '100%',
+                                  'background-color': '#323232',
+                                  border: '1px solid #323232',
+                                  'animation-duration': '2s'
+                                }" style="height:100%"> </ngx-skeleton-loader>
+                              </div>
+                            </div>
+                            <div *ngIf="dataLength > 0" style="display: contents;">
+                            <div class="colored_card" *ngFor="let singledata of data">
+                                <div class="mainImg2" (click)="getPageById(singledata.Id)">
+                                    <Img src="{{singledata.PosterUrl}}">
+                                    <span>{{singledata.Title}}</span>
+                                </div>
+                                <!-- <div class="shortDetails">
+                                    <p class="extraDetails">2017</p>
+                                    <p class="extraDetails">IMDB</p>
+                                    <p class="extraDetails">8.1</p>
+                                    <p class="extraDetailsBorder">13+</p>
+                                    <img src="../../../../assets/imgsss/+.svg" alt="">
+
+                                </div> -->
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

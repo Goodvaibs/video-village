@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="login">
+        <div class="contentDivs">
+            <div class="logoNForm">
+                <div class="logo">
+                    <img src="../../../../assets/imgsss/Logo.svg" alt="">
+                </div>
+                <div class="formContainer">
+                    <p>Verify Otp</p>
+                    <div class="formInputContainer">
+                        To verify your email, we’ve sent a One Time Password (OTP) to AaravVarma@gmail.com and +91 9898989899 (change)
+                    </div>
+                    <div class="formInputContainer">
+                        <label class="formLabel">Enter OTP</label>
+                        <input class="formInput" type="text" [formControl]="otp">
+                    </div>
+                    
+                    <button class="submitButton" (click)="submitOtp()">
+                        Create your Account
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="remember">
+                        <input type="checkbox" (change)="termsChecked(isChecked?false:true)" />
+                        <label for="vehicle3">By creating an account, you agree to Video Village’s Terms and Privacy Notice. </label>
+                    </div>
+                    <!-- <div *ngIf="isCheckedError" class="remember2" >
+                        <p>Please check our terms and conditions.</p>
+                    </div> -->
+                </div>
+                
+                <div class="createAcc">
+                    <button (click)="resendOtp()">Resend OTP</button>
+                </div>
+
+            </div>
+
+            <div class="mainImg">
+                <div class="all-img">
+                    <img src="../../../../assets/imgsss/all1.png" alt="">
+                    <img src="../../../../assets/imgsss/all2.png" alt="">
+                    <img src="../../../../assets/imgsss/all3.png" alt="">
+                    <img src="../../../../assets/imgsss/all4.png" alt="">
+                    <img src="../../../../assets/imgsss/all5.png" alt="">
+                    <img src="../../../../assets/imgsss/all6.png" alt="">
+                    <img src="../../../../assets/imgsss/all7.png" alt="">
+                    <img src="../../../../assets/imgsss/all8.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<form class="form">
+	<mat-form-field class="full-width">
+		<input matInput placeholder="" aria-label="State" [matAutocomplete]="auto"  (keyup)="getStates($event.target.value)">
+		<mat-autocomplete #auto="matAutocomplete">
+			<mat-option *ngFor="let state of filteredStates" [value]="state.Title" (click)="redirect(state.Id, state.Type)">
+				<span>{{ state.Title }}</span>
+			</mat-option>
+		</mat-autocomplete>
+	</mat-form-field>
+	<br />
+</form>

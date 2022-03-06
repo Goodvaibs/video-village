@@ -1,0 +1,292 @@
+.container {
+  padding: 0;
+  margin: 0;
+
+  .login {
+    .contentDivs {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+
+      .logoNForm {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        background-color: #000000;
+        align-items: center;
+        padding-top: 3.7vw;
+
+        .logo {
+          margin-bottom: 1.6rem;
+          height: 100px;
+          img{
+            height: 100%;
+          }
+        }
+
+
+        .formContainer {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-bottom: 1rem;
+
+          p {
+            font-size: 28px;
+            margin-bottom:1.3rem;
+          }
+
+          .formInputContainer {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+
+            label {
+              font-size: 13px;
+              line-height: 18px;
+            }
+
+            input {
+              width: calc(100% - 22px);
+              height: 36px;
+              margin-top: 7px;
+              border-radius: 5px;
+              border: none;
+              outline: 0;
+              padding-left: 20px;
+            }
+          }
+
+          .submitButton {
+            width: 100%;
+            height: 36px;
+            background-color: #0F79AF;
+            
+            font-size: 14px;
+            border-radius: 5px;
+            color: #ffffff;
+            margin-top: .8rem;
+          }
+        }
+
+        .row {
+          display: flex;
+          flex-direction: row;
+          width: 45%;
+          justify-content: space-between;
+          margin-bottom: 1.2rem;
+
+          .remember {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            input {
+              width: 18px;
+              height: 18px;
+              margin: 0;
+              margin-right: .5rem;
+            }
+
+            label {
+              
+              font-size: 13px;
+              color: #ffffff;
+            }
+          }
+
+          .forgetPass {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            p {
+              
+              font-size: 13px;
+              margin-right: .5rem;
+            }
+
+            img {
+              height: 18px;
+              width: 18px;
+            }
+          }
+        }
+
+        .signInWith {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 45%;
+          justify-content: space-between;
+          margin-bottom: 1.5rem;
+
+          button {
+            width: 140px;
+            height: 36px;
+            border-radius: 5px;
+            
+            font-size: 14px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+
+            img {
+              margin-left: 10px;
+              margin-right: 16px;
+            }
+          }
+
+          .googleClass {
+            background-color: #DB4A39;
+          }
+
+          .facebookClass {
+            background-color: #1976D2;
+            margin-right: .5rem;
+          }
+        }
+
+        .createAcc {
+          display: flex;
+          flex-direction: row;
+          width: 45%;
+          justify-content: center;
+
+          p {
+            
+            font-size: 13px;
+            margin-right: 10px;
+          }
+
+          a {
+            font-size: 13px;
+            color: #0F79AF;
+            text-underline-position: below;
+          }
+        }
+      }
+
+      .mainImg {
+        width: 55%;
+        position: relative;
+        z-index: 4;
+        overflow-y: hidden;
+
+        .all-img {
+
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+
+          img {
+            height: 50vh;
+
+          }
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.406557) 35.69%, rgba(0, 0, 0, 0) 42.36%);
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:1200px) {
+  .container .login .contentDivs {
+    .logoNForm {
+      width: 60%;
+    }
+
+    .mainImg {
+      width: 40%;
+
+    }
+  }
+}
+
+@media (max-width:950px) {
+  .container .login .contentDivs {
+    .logoNForm {
+      width: 75%;
+    }
+
+    .mainImg {
+      width: 25%;
+
+    }
+  }
+}
+
+@media (max-width:800px) {
+  .container .login .contentDivs {
+    .logoNForm {
+      width: 100%;
+    }
+
+    .mainImg {
+      display: none;
+
+    }
+  }
+}
+
+@media (max-width:700px) {
+  .container .login .contentDivs {
+    .logoNForm {
+
+      .formContainer,
+      .row,
+      .signInWith,
+      .createAcc {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width:600px) {
+  .container .login .contentDivs {
+    .logoNForm {
+
+      .formContainer,
+      .row,
+      .signInWith,
+      .createAcc {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width:500px) {
+  .container .login .contentDivs {
+    .logoNForm {
+
+      .formContainer,
+      .row,
+      .signInWith,
+      .createAcc {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 500px){
+  .hightdiv{
+display: none;
+  }
+}

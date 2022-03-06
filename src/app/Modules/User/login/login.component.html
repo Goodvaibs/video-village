@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="login">
+        <div class="contentDivs">
+            <div class="logoNForm" *ngIf="loading">
+              <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+                <div class="logo">
+                    <img src="../../../../assets/imgsss/Logo.svg" alt="">
+                </div>
+                <div class="formContainer">
+                    <p>SignIn</p>
+                    <div class="formInputContainer">
+                        <label class="formLabel">Email or Phone number</label>
+                        <input class="formInput" type="text" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback valid-error">
+                          <div *ngIf="f.username.errors.required">*Email or Phone Number is required</div>
+                      </div>
+                    </div>
+                    <div class="formInputContainer">
+                        <label class="formLabel">Password</label>
+                        <input class="formInput" type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback valid-error">
+                          <div *ngIf="f.password.errors.required">*Password is required</div>
+                      </div>
+                    </div>
+                    <button class="submitButton" type="submit">
+                        Sign In
+                    </button>
+                </div>
+                <div class="row remember">
+                    <div class="remember">
+                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                        <label for="vehicle3"> Remember Me?</label>
+                    </div>
+                    <div class="forgetPass">
+                        <p>Forget password</p>
+                        <img src="../../../../assets/imgsss/help.svg" alt="">
+                    </div>
+                </div>
+                <div class="or">
+                    <hr class="white50">
+                    <p class="or-text">or</p>
+                    <hr class="white50">
+                </div>
+               
+                <div class="signInWith">
+                    <button class="facebookClass" (click)="signInWithFacebook()">
+                        <img src="../../../../assets/imgsss/facebook.svg" alt=""> Facebook</button>
+                    <button class="googleClass" (click)="signInWithGoogle()">
+                        <img src="../../../../assets/imgsss/Vector.svg" alt=""> Google</button>
+                </div>
+                <div class="createAcc">
+                    <p>New to Video Village ?</p>
+                    <a [routerLink]="['/register']">Create your Account</a>
+                </div>
+                </form>
+            </div>
+
+            <div class="mainImg">
+                <div class="all-img">
+                    <img src="../../../../assets/imgsss/all1.png" alt="">
+                    <img src="../../../../assets/imgsss/all2.png" alt="">
+                    <img src="../../../../assets/imgsss/all3.png" alt="">
+                    <img src="../../../../assets/imgsss/all4.png" alt="">
+                    <img src="../../../../assets/imgsss/all5.png" alt="">
+                    <img src="../../../../assets/imgsss/all6.png" alt="">
+                    <img src="../../../../assets/imgsss/all7.png" alt="">
+                    <img src="../../../../assets/imgsss/all8.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="hightdiv" style="height: 72px; background-color: transparent;"></div>
+<div class="container">
+  <div class="login">
+      <div class="contentDivs">
+          <div class="logoNForm">
+            <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+              <div class="logo">
+                  <img src="../../../../assets/imgsss/logo/newlogo.png" alt="">
+              </div>
+              <div class="formContainer">
+                  <p>Confirm Otp</p>
+                  <!-- <div class="formInputContainer">
+                      <label class="formLabel">Email</label>
+                      <input class="formInput" type="text" formControlName="userName" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }">
+                      <div *ngIf="submitted && f.userName.errors" class="invalid-feedback valid-error">
+                        <div *ngIf="f.userName.errors.required">*Email is required</div>
+                    </div>
+                  </div> -->
+                  <div class="formInputContainer">
+                      <label class="formLabel">Otp</label>
+                      <input class="formInput" type="password" formControlName="verifycode" [ngClass]="{ 'is-invalid': submitted && f.verifycode.errors }">
+                      <div *ngIf="submitted && f.verifycode.errors" class="invalid-feedback valid-error">
+                        <div *ngIf="f.verifycode.errors.required">*Otp is required</div>
+                    </div>
+                  </div>
+                  <button class="submitButton" type="submit">
+                      Confirm
+                  </button>
+              </div>
+              </form>
+          </div>
+
+          <div class="mainImg">
+              <div class="all-img">
+                  <img src="../../../../assets/imgsss/all1.png" alt="">
+                  <img src="../../../../assets/imgsss/all2.png" alt="">
+                  <img src="../../../../assets/imgsss/all3.png" alt="">
+                  <img src="../../../../assets/imgsss/all4.png" alt="">
+                  <img src="../../../../assets/imgsss/all5.png" alt="">
+                  <img src="../../../../assets/imgsss/all6.png" alt="">
+                  <img src="../../../../assets/imgsss/all7.png" alt="">
+                  <img src="../../../../assets/imgsss/all8.png" alt="">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

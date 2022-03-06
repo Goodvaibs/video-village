@@ -1,0 +1,32 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:170px;
+  .logo {
+      margin-bottom: -30px;
+  }
+
+  .details {
+      display: flex;
+      flex-direction: row;
+      padding: 0 20px;
+      
+
+    a {
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 20px;
+      color: #0F79AF;
+      margin-right: 25px;
+    }
+
+    .copyRight {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+}

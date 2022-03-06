@@ -1,0 +1,28 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-videovillage-dev-231447-authRole",
+            "UnauthRoleArn": "arn:aws:iam::123901662937:role/amplify-videovillage-dev-231447-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::123901662937:role/amplify-videovillage-dev-231447-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-videovillage-dev-231447-deployment",
+            "UnauthRoleName": "amplify-videovillage-dev-231447-unauthRole",
+            "StackName": "amplify-videovillage-dev-231447",
+            "StackId": "arn:aws:cloudformation:us-east-2:123901662937:stack/amplify-videovillage-dev-231447/71118150-0fd7-11eb-b230-02ab5907cf4e",
+            "AmplifyAppId": "d33frgh7x93hmi"
+        },
+        "categories": {
+            "auth": {
+                "videovillage875ce9f8": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"249131982926868\",\"client_secret\":\"5cfd8395d1e6fce96ec98d7385f0d6cb\"},{\"ProviderName\":\"Google\",\"client_id\":\"416676195403-mpp82quimfu12kntsjsre41aj4qhc6u6.apps.googleusercontent.com\",\"client_secret\":\"fXRmexM5nUTB7un4IpDejf6p\"}]"
+                }
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d33frgh7x93hmi",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

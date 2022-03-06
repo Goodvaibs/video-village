@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import '~video.js/dist/video-js.css';
+
+
+body {
+  font-family: Nunito, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  background-color: #0E1111;
+  color: #ffffff;
+  margin: 0px;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+span {
+  margin: 0px;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &.mat-button {
+    font-family: Muli, sans-serif;
+  }
+
+  box-sizing: border-box;
+}
+
+.gallery_scroller {
+  scroll-behavior: smooth;
+}
+
+.obj-fit {
+  object-fit: cover;
+}
+
+.colored_card,
+.colored_card-lang {
+  transition: 250ms all;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 11;
+    cursor: pointer;
+  }
+}
+
+/* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

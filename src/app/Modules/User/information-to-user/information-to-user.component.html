@@ -1,0 +1,534 @@
+<div class="hightdiv" style="height: 72px; background-color: transparent;"></div>
+<div class="info">
+    <!-- <div class="sidebarOpener" *ngIf = "!sidebar">
+        <button (click)="sidebarOpen()">
+            OPEN SIDEBAR
+        </button>
+    </div> -->
+    <!-- in case we need this openable -->
+    <div class="sidebar">
+        <!-- <div class="selectable" >
+            <div class="sidebarClose">
+                <button (click)="sidebarClose()">
+                    CLOSE SIDEBAR
+                </button>
+            </div>
+        </div> -->
+        <div *ngFor="let item of allTabs" class="vertical-container">
+            <div *ngIf="item=='Help'" class="selected-certical-help" (click)="openContainer(item)">
+                <button>
+                    {{item}}
+                </button>
+            </div>
+            <div *ngIf="(item==shown) && (item != 'Help')" class="selected-vertical" (click)="openContainer(item)">
+                <button>
+                    {{item}}
+                </button>
+            </div>
+            <div *ngIf="(item!=shown) && (item!= 'Help')" class="selectable" (click)="openContainer(item)">
+                <button>
+                    {{item}}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- sidebar start -->
+        <!-- feedback block -->
+
+
+        <div *ngIf="shown=='Help'" class="help">
+            <span>Help</span>
+            <div class="contentDivs">
+                <div class="termText">
+                    <p>If you are looking for ultimate entertainment, VIDEO VILLAGE is your final destination.</p>
+                    <p>India’s finest digital entertainment platform, VIDEO VILLAGE is one of the most preferred OTT
+                        platforms today for streaming Series, Movies and Shorts . From Hollywood to regional cinema,
+                        find everything here in one click. At VIDEO VILLAGE, we genuinely believe that entertainment
+                        comes first, you need to consume it.</p>
+                    <br>
+                    <p> VIDEO VILLAGE brings in the advantage of the language of your comfort! With Video Village you
+                        get featured content language selection to watch your favourite content across Video Village
+                        Originals, Video Village Exclusives short series, Kids entertainment programs, and acclaimed
+                        plays. It’s unlimited entertainment in your choice of language .</p>
+                    <p> We offer a User friendly video streaming technology. Language Navigation, Seamless Video
+                        playback, Content Search, option to choose video quality and much more create a video
+                        experience. Enjoy Your favourite content in your own language</p>
+                </div>
+                <div class="image">
+                    <img src="../../../../assets/imgsss/question 1.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div *ngIf="shown=='Registering'" class="registering">
+            <span>Registering </span>
+            <div class="contentDivs">
+                <div class="termText">
+                    <p> You can sign up with VIDEO VILLAGE with any of the following options:</p>
+                    <div class="points">
+                        <div class="circle">
+                            <span>1</span>
+                        </div>
+                        <p>Mobile number</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>2</span>
+                        </div>
+                        <p>Email ID</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>3</span>
+                        </div>
+                        <p>Google</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>4</span>
+                        </div>
+                        <p>Facebook</p>
+                    </div>
+                    <p>If you're signing up for VIDEO VILLAGE using your mobile number or email ID, you will be required
+                        to provide your first & last name, set a password and agree to our terms of use & privacy
+                        policy. Mobile registrations will have an additional step of verifying OTP.</p>
+                    <p> If you're signing up using Google, Facebook, you'll need to sign in to your account at Google /
+                        Facebook and authorize access to share your name, Date of birth and gender with us to complete
+                        the registration. </p>
+
+                    <div class="headingBenifits">Benifits of Registering </div>
+                    <div class="points">
+                        <div class="star">
+                            <img src="../../../../assets/imgsss/Star 40.svg" alt="">
+                        </div>
+                        <p>Watch a video from where you left, and switch easily across devices too!</p>
+                    </div>
+                    <div class="points">
+                        <div class="star">
+                            <img src="../../../../assets/imgsss/Star 40.svg" alt="">
+                        </div>
+                        <p> Download videos for viewing later</p>
+                    </div>
+                    <div class="points">
+                        <div class="star">
+                            <img src="../../../../assets/imgsss/Star 40.svg" alt="">
+                        </div>
+                        <p>Save videos to your watchlist and favourite them too </p>
+                    </div>
+                    <div class="points">
+                        <div class="star">
+                            <img src="../../../../assets/imgsss/Star 40.svg" alt="">
+                        </div>
+                        <p> Receive personalized recommendations and communication basis your watch history</p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img id="regOne" src="../../../../assets/imgsss/web 1.svg" alt="">
+                    <img id="resTwo" src="../../../../assets/imgsss/Frame.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div *ngIf="shown=='Subscription'" class="subscription">
+            <span>Subscription - Purchasing a subscription : </span>
+            <div class="contentDivs">
+                <div class="forRow">
+                    <div class="forCol">
+                        <div class="termText">
+                            <p>Subscriptions we have</p>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>1</span>
+                                </div>
+                                <p>Dhrishyam - 1 month plan</p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>2</span>
+                                </div>
+                                <p>Dangal - 3 months plan</p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>3</span>
+                                </div>
+                                <p>Baahubali - 1 year plan</p>
+                            </div>
+                        </div>
+                        <div class="imageCol">
+                            <img id="subOne" src="../../../../assets/imgsss/Membership.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="imageRow">
+                        <img id="subTwo" src="../../../../assets/imgsss/humaaans/standing 3.svg" alt="">
+                        <img id="subThree" src="../../../../assets/imgsss/Group.svg" alt="">
+                        <img id="subFour" src="../../../../assets/imgsss/A Human/Sitting.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="shown=='Payment'" class="payment">
+            <span>Payment</span>
+            <div class="contentDivs">
+                <div class="text">
+                    <p>Our payment options vary across countries and the platform you're subscribing from. Below are the
+                        payment options across platforms for India.</p>
+                    <br>
+                    <p>All the Subscription Packages will have below options to pay</p>
+                    <P> Debit Card All Debit cards are accepted Paytm Google Pay </P>
+                    <div class="points">
+                        <div class="circle">
+                            <span>1</span>
+                        </div>
+                        <span style="width: 80px;">Credit Card</span><span>All Credit Cards are accepted</span>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>2</span>
+                        </div>
+                        <span style="width: 80px;">Debit Card</span><span>All Debit cards are accepted</span>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>3</span>
+                        </div>
+                        <span style="min-width: 80px;">Paytm </span> <span> Paytm We accept all Credit Cards along with
+                            the following 4 Debit
+                            Cards: ICICI Bank, Kotak
+                            Mahindra Bank, Canara Bank & Citibank as payment via Paytm. Paytm via Wallet transaction is
+                            not supported.</span>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>4</span>
+                        </div>
+                        <span style="width: 80px;">Google Pay</span>
+                    </div>
+                </div>
+                <div class="imageRow">
+                    <img id="payOne" src="../../../../assets/imgsss/Frame1.svg" alt="">
+                    <img id="payThree" src="../../../../assets/imgsss/Google-Pay-Logo-Icon-PNG 1.svg" alt="">
+                    <img id="payTwo"
+                        src="../../../../assets/imgsss/54433583_2270713066327585_4370000988841443328_n 1.svg" alt="">
+                    <img id="payFour" src="../../../../assets/imgsss/card (1) 1.png" alt="">
+                    <img id="payFive" src="../../../../assets/imgsss/card 1.png" alt="">
+
+                </div>
+
+            </div>
+        </div>
+        <div *ngIf="shown=='My Account'" class="myAccount">
+            <span>My Account</span>
+            <div class="contentDivs">
+                <div class="text">
+                    <div class="blueLine">Trouble in Signing :</div>
+
+                    <p style="margin-left: 0;">If you are unable to sign in to your VIDEO VILLAGE account, it typically
+                        points to an earlier,
+                        partially completed sign up attempt. Follow the troubleshooting steps below to resolve the
+                        issue.</p>
+                    <div class="blueLine">I don't remember my login ID :</div>
+                    <p style="margin-left: 0;">If you do not remember your login credentials, don't worry. Login can be
+                        done in one of three
+                        ways :</p>
+                    <div class="points">
+                        <div class="circle">
+                            <span>1</span>
+                        </div>
+                        <p>Mobile number</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>2</span>
+                        </div>
+                        <p>Email ID</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>3</span>
+                        </div>
+                        <p>Social (Google / Facebook)</p>
+                    </div>
+                    <P style="margin-left: 0;"> As you do not remember your login
+                        details, let's try resetting the password for all the ways of logging in to figure the method
+                        you logged in via. </P>
+
+                    <div class="blueLine">Resetting your password for your Mobile Number :</div>
+
+                    <div class="points">
+                        <div class="circle">
+                            <span>1</span>
+                        </div>
+                        <p>Click the following link to reset your password: https://www.Video
+                            Village.video/forgotpassword. If the link doesn’t work for you, you'll see the "Forgot
+                            password" option on the login page.</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>2</span>
+                        </div>
+                        <p>Click "Forgot password"</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>3</span>
+                        </div>
+                        <p>Enter your mobile number</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>4</span>
+                        </div>
+                        <p>Click "Continue" to receive the OTP on your Mobile. If you get an error "The user could not
+                            be found" it means you did not register with your mobile number. Proceed to reset your
+                            password for your Email ID </p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>5</span>
+                        </div>
+                        <p>Enter the OTP received on your mobile number</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>6</span>
+                        </div>
+                        <p>Create a new password</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>7</span>
+                        </div>
+                        <p>Confirm your new password</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>8</span>
+                        </div>
+                        <p>You're now good to login to VIDEO VILLAGE with your Mobile number!</p>
+                    </div>
+
+                    <div class="blueLine">Resetting your password for your Email ID :</div>
+
+                    <div class="points">
+                        <div class="circle">
+                            <span>1</span>
+                        </div>
+                        <p>Click the following link to reset your password: https://www.Video
+                            Village.video/forgotpassword. If the above link doesn’t work for you, you'll see the "Forgot
+                            password" option on the login page.</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>2</span>
+                        </div>
+                        <p>Click "Forgot password"</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>3</span>
+                        </div>
+                        <p>Enter your Email ID </p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>4</span>
+                        </div>
+                        <p>Click on "Send password reset link". If you get an error "The user could not be found" it
+                            means you did not register with your Email ID. Proceed to reset your password via Google /
+                            Facebook / Twitter</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>5</span>
+                        </div>
+                        <p>Follow the instructions on the email to reset your password</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>6</span>
+                        </div>
+                        <p>You're now good to login to VIDEO VILLAGE with your Mobile number!</p>
+                    </div>
+
+
+                    <div class="blueLine">Resetting your Social (Google/Facebook) password :</div>
+
+                    <div class="points">
+                        <div class="circle">
+                            <span>1</span>
+                        </div>
+                        <p>Click the relevant Social icon you would've logged in from</p>
+                    </div>
+                    <div class="points">
+                        <div class="circle">
+                            <span>2</span>
+                        </div>
+                        <p>Click "Forgot password" to reset your password with Google/Facebook/Twitter</p>
+                    </div>
+                </div>
+                <div class="imageRow">
+                    <img id="myAccOne" src="../../../../assets/imgsss/Group 43.svg" alt="">
+                    <img id="myAccTwo" src="../../../../assets/imgsss/ux 1.svg" alt="">
+                    <img id="myAccThree" src="../../../../assets/imgsss/Group 42.svg" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div *ngIf="shown=='Password'" class="changePass">
+            <span>How can I change my password?</span>
+            <div class="contentDivs">
+                <div class="text">
+
+                    <div class="row1">
+                        <div>
+                            <div class="blueLine">On the Android App:</div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>1</span>
+                                </div>
+                                <p>Tap the "Hamburger" menu (3 horizontal lines) on the top left corner of the screen
+                                </p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>2</span>
+                                </div>
+                                <p>Tap the profile/person icon on the top</p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>3</span>
+                                </div>
+                                <p>Tap "Edit profile"</p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>4</span>
+                                </div>
+                                <p>You can now update all the relevant information on your profile.</p>
+                            </div>
+
+                        </div>
+                        <div class="imageRow">
+                            <img id="changePassOne" src="../../../../assets/imgsss/android 1.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="row1">
+                        <div>
+                            <div class="blueLine">On the iOS App:</div>
+
+                            <div class="points">
+                                <div class="circle">
+                                    <span>1</span>
+                                </div>
+                                <p>Tap on "More" at the bottom right corner of the screen</p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>2</span>
+                                </div>
+                                <p>Tap the profile/person icon on the top</p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>3</span>
+                                </div>
+                                <p>Tap "Edit profile"</p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>4</span>
+                                </div>
+                                <p>You can now update all the relevant information on your profile.</p>
+                            </div>
+                        </div>
+                        <div class="imageRow">
+                            <img id="changePassTwo" src="../../../../assets/imgsss/brand 1.svg" alt="">
+                        </div>
+                    </div>
+
+
+                    <div class="row1">
+                        <div>
+                            <div class="blueLine">On the Website (Mobile):</div>
+
+                            <div class="points">
+                                <div class="circle">
+                                    <span>1</span>
+                                </div>
+                                <p>Tap the "Hamburger" menu (3 horizontal lines) on the top left corner of the screen
+                                </p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>2</span>
+                                </div>
+                                <p>Click on your Name</p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>3</span>
+                                </div>
+                                <p>Click on "Edit Profile"</p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>4</span>
+                                </div>
+                                <p>You can now update all the relevant information on your profile.</p>
+                            </div>
+                        </div>
+                        <div class="imageRow">
+                            <img id="changePassThree" src="../../../../assets/imgsss/app-development 1.svg" alt="">
+                        </div>
+                    </div>
+
+
+                    <div class="row1">
+                        <div>
+                            <div class="blueLine">On the Website (Desktop/Laptop):</div>
+
+                            <div class="points">
+                                <div class="circle">
+                                    <span>1</span>
+                                </div>
+                                <p>Click on the person/profile icon on the top right corner</p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>2</span>
+                                </div>
+                                <p>Click on your Name</p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>3</span>
+                                </div>
+                                <p>Click on "Edit Profile"</p>
+                            </div>
+                            <div class="points">
+                                <div class="circle">
+                                    <span>4</span>
+                                </div>
+                                <p>You can now update all the relevant information on your profile.</p>
+                            </div>
+                        </div>
+                        <div class="imageRow">
+                            <img id="changePassFour" src="../../../../assets/imgsss/webpage 1.svg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+        <!-- feedback block -->
+
+        <!-- sidebar end -->
+    </div>
+</div>

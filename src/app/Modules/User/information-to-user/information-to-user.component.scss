@@ -1,0 +1,961 @@
+* {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.info {
+  display: flex;
+
+  .sidebarOpener {
+    width: 200px;
+    height: 60px;
+    background-color: inherit;
+    z-index: 3;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    max-width: 150px;
+    min-width: 150px;
+    z-index: 10;
+
+    .vertical-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background-color: #0F171E;
+
+      .selectable {
+        height: 35px;
+        width: 100%;
+        display: block;
+        background-color: #0F171E;
+        display: flex;
+        align-items: center;
+
+        button {
+          color: white;
+          background-color: inherit;
+        }
+      }
+
+      .selected-vertical {
+        width: 100%;
+        height: 35px;
+        display: block;
+        background-color: #0F79AF;
+        border: 2px solid #6FC0FF;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+
+        button {
+          color: white;
+          background-color: #0F79AF;
+        }
+      }
+
+      .selected-certical-help {
+        width: 100%;
+        display: block;
+        height: 35px;
+        background-color: #D9D9D9;
+        border: 2px solid #6FC0FF;
+        box-sizing: border-box;
+        margin-bottom: 2px;
+        display: flex;
+        align-items: center;
+
+        button {
+          color: black;
+          font-weight: bold;
+          background-color: inherit;
+        }
+      }
+    }
+  }
+
+  .container {
+    position: relative;
+    max-width: 100%;
+    padding: 50px 60px;
+
+    .help {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: bold;
+        font-size: 21px;
+        line-height: 29px;
+        margin-bottom: 17px;
+      }
+
+      .contentDivs {
+        display: flex;
+        flex-direction: row;
+
+        .termText {
+          width: 65%;
+          font-size: 15px;
+          line-height: 20px;
+          text-align: justify;
+          margin-right: 20px;
+        }
+
+        .image {
+          margin: auto;
+
+        }
+      }
+    }
+
+    .registering {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: bold;
+        font-size: 21px;
+        line-height: 29px;
+        margin-bottom: 17px;
+      }
+
+      .contentDivs {
+        display: flex;
+        flex-direction: row;
+
+        .termText {
+          width: 60%;
+          font-size: 15px;
+          line-height: 20px;
+          text-align: justify;
+          margin-right: 50px;
+
+          .headingBenifits {
+            font-weight: bold;
+            font-size: 21px;
+            line-height: 29px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+          }
+
+          .points {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .circle {
+              display: flex;
+              height: 20px;
+              width: 20px;
+              border-radius: 50%;
+              background-color: #0F79AF;
+
+              span {
+                background-color: transparent;
+                margin: auto;
+                font-size: 11px;
+                line-height: normal;
+              }
+            }
+
+            p {
+              line-height: normal;
+              margin: 0;
+              margin-left: 20px;
+
+            }
+          }
+        }
+
+        .image {
+          position: relative;
+
+          #resOne {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: transparent;
+          }
+
+          #resTwo {
+            position: absolute;
+            left: 60px;
+            top: 84px;
+            background-color: transparent;
+
+          }
+
+        }
+      }
+    }
+
+    .subscription {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: bold;
+        font-size: 21px;
+        line-height: 29px;
+        margin-bottom: 17px;
+      }
+
+      .contentDivs {
+        display: flex;
+        flex-direction: row;
+
+        .forRow {
+          display: flex;
+          flex-direction: row;
+
+          .forCol {
+
+            .termText {
+              width: 60%;
+              font-size: 15px;
+              line-height: 20px;
+              text-align: justify;
+              margin-right: 50px;
+              margin-bottom: 3rem;
+
+              .points {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 10px;
+
+                p {
+                  margin: 0;
+                  margin-left: 20px;
+                }
+
+                .circle {
+                  display: flex;
+                  height: 20px;
+                  width: 20px;
+                  border-radius: 50%;
+                  background-color: #0F79AF;
+
+                  span {
+                    background-color: transparent;
+                    margin: auto;
+                    font-size: 11px;
+                    line-height: normal;
+                  }
+                }
+              }
+            }
+
+            .imageCol {
+              #subOne {
+                background-color: transparent;
+              }
+            }
+          }
+
+          .imageRow {
+            position: relative;
+
+            #subTwo {
+              position: absolute;
+              left: 113px;
+              top: 18px;
+              background-color: transparent;
+            }
+
+            #subThree {
+              position: absolute;
+              left: 231px;
+              top: -51px;
+              background-color: transparent;
+
+            }
+
+            #subFour {
+              position: absolute;
+              left: 320px;
+              top: 70px;
+              background-color: transparent;
+
+            }
+          }
+        }
+      }
+
+    }
+
+    .payment {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: bold;
+        font-size: 21px;
+        line-height: 29px;
+        margin-bottom: 17px;
+      }
+
+      .contentDivs {
+        display: flex;
+        flex-direction: row;
+
+        .text {
+          width: 55%;
+          font-size: 15px;
+          line-height: 20px;
+          text-align: justify;
+          margin-right: 50px;
+          margin-bottom: 3rem;
+
+          .points {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .circle {
+              display: flex;
+              height: 20px;
+              min-width: 20px;
+              border-radius: 50%;
+              background-color: #0F79AF;
+
+              span {
+                background-color: transparent;
+                margin: auto;
+                font-size: 11px;
+                line-height: normal;
+              }
+            }
+
+            span {
+              font-size: 15px;
+              line-height: normal;
+              font-weight: 500;
+              margin-bottom: 0;
+              margin-left: 20px;
+            }
+          }
+        }
+
+        .imageRow {
+          position: relative;
+          display: flex;
+          margin-left: -50px;
+
+          #payOne {
+            position: absolute;
+            left: 200px;
+            top: 70px;
+            background-color: transparent;
+
+          }
+
+          #payTwo {
+            position: absolute;
+            left: 10px;
+            top: 190px;
+            background-color: transparent;
+          }
+
+          #payThree {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            background-color: transparent;
+
+          }
+
+          #payFour {
+            position: absolute;
+            left: 165px;
+            top: -12px;
+            background-color: transparent;
+
+          }
+
+          #payFive {
+            position: absolute;
+            left: 193px;
+            top: -29px;
+            background-color: transparent;
+
+          }
+        }
+      }
+    }
+
+    .myAccount {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: bold;
+        font-size: 21px;
+        line-height: 29px;
+        margin-bottom: 10px;
+      }
+
+      .contentDivs {
+        display: flex;
+        flex-direction: row;
+
+        .text {
+          width: 50%;
+          font-size: 15px;
+          line-height: 20px;
+          text-align: justify;
+          margin-right: 50px;
+          margin-bottom: 3rem;
+
+          p {
+            font-size: 15px;
+            line-height: normal;
+            font-weight: 500;
+            margin: 0;
+            line-height: 22px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+          }
+
+          .blueLine {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 22px;
+            color: #0F79AF;
+            margin-top: 30px;
+            margin-bottom: 25px;
+          }
+
+
+          .points {
+            display: flex;
+            flex-direction: row;
+
+            margin-bottom: 10px;
+
+            .circle {
+              display: flex;
+              height: 20px;
+              min-width: 20px;
+              border-radius: 50%;
+              background-color: #0F79AF;
+
+              span {
+                background-color: transparent;
+                margin: auto;
+                font-size: 11px;
+                line-height: normal;
+                color: white;
+              }
+
+            }
+
+            p {
+              font-size: 15px;
+              line-height: normal;
+              font-weight: 500;
+              margin: 0;
+              line-height: 22px;
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+
+      .imageRow {
+        background: transparent;
+
+        #myAccOne {
+          position: fixed;
+          right: 10px;
+          top: 200px;
+          background: transparent;
+
+
+        }
+
+        #myAccTwo {
+          position: fixed;
+          right: 280px;
+          top: 150px;
+          background: transparent;
+        }
+
+        #myAccThree {
+          position: fixed;
+          right: 330px;
+          top: 330px;
+          background: transparent;
+
+        }
+      }
+    }
+
+    .changePass {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: bold;
+        font-size: 21px;
+        line-height: 29px;
+        margin-bottom: 10px;
+      }
+
+      .contentDivs {
+        display: flex;
+        flex-direction: row;
+
+        .text {
+          width: 60%;
+          font-size: 15px;
+          line-height: 20px;
+          text-align: justify;
+          margin-right: 50px;
+          margin-bottom: 3rem;
+
+          .row1 {
+            display: flex;
+            flex-direction: row;
+
+            p {
+              font-size: 15px;
+              line-height: normal;
+              font-weight: 500;
+              margin: 0;
+              line-height: 22px;
+              margin-left: 20px;
+              margin-bottom: 10px;
+            }
+
+            .blueLine {
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 22px;
+              color: #0F79AF;
+              margin-top: 30px;
+              margin-bottom: 25px;
+            }
+
+
+            .points {
+              display: flex;
+              flex-direction: row;
+
+              margin-bottom: 10px;
+
+              .circle {
+                display: flex;
+                height: 22px;
+                min-width: 22px;
+                border-radius: 50%;
+                background-color: #0F79AF;
+
+                span {
+                  background-color: transparent;
+                  margin: auto;
+                  font-size: 11px;
+                  line-height: normal;
+                  color: white;
+                }
+
+              }
+
+              p {
+                font-size: 15px;
+                line-height: normal;
+                font-weight: 500;
+                margin: 0;
+                line-height: 25px;
+                margin-left: 20px;
+
+              }
+            }
+
+            .imageRow {
+              background: transparent;
+
+              #changePassOne {
+                position: absolute;
+                background: transparent;
+                right: 20%;
+                top: 200px;
+              }
+
+              #changePassTwo {
+                position: absolute;
+                background: transparent;
+                right: 21%;
+                top: calc(450px + 1%);
+              }
+
+              #changePassThree {
+                background: transparent;
+                position: absolute;
+                right: 20.5%;
+                top: calc(560px + 9%);
+
+              }
+
+              #changePassFour {
+                background: transparent;
+                position: absolute;
+                right: 20%;
+                top: calc(750px + 12%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 950px) {
+  .info {
+    .container {
+      padding: 50px 60px;
+
+      .feedback {
+        .contentDivs {
+          width: 50%;
+        }
+
+        .image {
+          left: -130px;
+        }
+      }
+
+      .help {
+        .contentDivs {
+          flex-flow: wrap-reverse;
+
+          .termText {
+            width: 100%;
+            margin-top: 10px;
+          }
+
+          .image {
+            img {
+              max-width: 180px;
+              height: 180px;
+            }
+          }
+        }
+      }
+
+      .registering {
+        .contentDivs {
+
+          .termText {
+            width: 50%;
+          }
+        }
+      }
+
+      .myAccount {
+        .contentDivs {
+
+          .text {
+            width: 100%;
+          }
+        }
+      }
+
+      .subscription {
+        .contentDivs {
+          .forRow {
+            .forCol {
+              .imageCol {
+                width: 100%;
+
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .subscription .contentDivs .forRow .imageRow {
+        margin-left: -30%;
+      }
+
+      .payment .contentDivs {
+        .imageRow {
+
+          #payOne {
+            opacity: 1;
+          }
+
+          #payTwo {
+            opacity: .3;
+          }
+
+          #payThree {
+            opacity: .3;
+          }
+
+          #payFour {
+            opacity: .3;
+          }
+
+          #payFive {
+            opacity: .3;
+          }
+        }
+      }
+
+      .changePass .contentDivs .text {
+        width: 60%;
+
+        .row1 .imageRow {
+          #changePassOne {
+            right: 7%;
+          }
+
+          #changePassTwo {
+            right: 10%;
+          }
+
+          #changePassThree {
+            right: 9%;
+          }
+
+          #changePassFour {
+            right: 7%;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .info {
+    .sidebar {
+      max-width: 105px;
+      min-width: 105px;
+    }
+
+    .container {
+      padding: 40px 25px 40px 30px;
+
+      .feedback {
+        flex-flow: column-reverse;
+
+        .contentDivs {
+          width: 80%;
+        }
+      }
+
+      .help {
+        .contentDivs {
+          .image {
+            img {
+              max-width: 120px;
+              height: 120px;
+            }
+          }
+        }
+      }
+
+      .registering {
+        .contentDivs {
+          flex-direction: column;
+
+          .termText {
+            width: 100%;
+          }
+        }
+      }
+
+      .payment .contentDivs {
+        .imageRow {
+          display: none;
+        }
+
+        .text {
+          width: 90%;
+          margin-right: 20px;
+        }
+      }
+
+      .changePass .contentDivs .text {
+        width: 85%;
+
+        .row1 .imageRow {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1125px) {
+  .info {
+    .container {
+      padding: 50px 60px;
+
+      .registering {
+        .contentDivs {
+          .termText {
+            width: 100%;
+          }
+        }
+
+        .image {
+          display: none;
+        }
+      }
+
+      .subscription {
+        .contentDivs {
+          .forRow {
+            .forCol {
+              .termText {
+                width: 100%;
+              }
+
+              .imageCol {
+                display: flex;
+                justify-self: center;
+              }
+            }
+
+            .imageRow {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .subscription .contentDivs .forRow .imageRow {
+        margin-left: -15%;
+      }
+
+      .payment .contentDivs {
+        .text {
+          width: 100%;
+        }
+
+        .imageRow {
+          display: none;
+        }
+      }
+
+      .myAccount .imageRow {
+        #myAccOne {
+          opacity: .2;
+        }
+
+        #myAccTwo {
+          opacity: .2;
+        }
+
+        #myAccThree {
+          opacity: .2;
+        }
+      }
+    }
+
+  }
+}
+
+@media (max-width: 650px) {
+  .info {
+    flex-direction: column;
+
+    .sidebar {
+        flex-direction: row;
+        flex-flow: wrap;
+        max-width: 100%;
+        min-width: 100%;
+        .vertical-container {
+            .selectable {
+                button{margin-left: 20px;}
+             }
+            .selected-vertical {
+                button{margin-left: 25px;}
+            }
+            .selected-certical-help {
+                button{margin-left: 20px;}
+            }
+        }
+    }
+    .container {
+      padding: 50px 60px;
+
+      .subscription .contentDivs .forRow .imageRow {
+        display: none;
+      }
+
+      .myAccount .imageRow {
+          transform: scale(.6);
+          margin-right: -80px;
+        #myAccOne {
+          width: 200px;
+          right: 50px;
+        }
+
+        #myAccTwo {
+          width: 150px;
+          right: 230px;
+          top: 110px;
+        }
+
+        #myAccThree {
+          width: 150px;
+          right: 300px;
+          top: 300px;
+        }
+      }
+
+      .myAccount .contentDivs .text {
+        width: 100%;
+      }
+
+      .changePass .contentDivs .text {
+        width: 100%;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 490px) {
+  .info {
+    .container {
+      padding: 40px 25px;
+
+
+      .myAccount .contentDivs .text {
+        margin-right: 0px;
+      }
+
+      .changePass .contentDivs .text {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .hightdiv {
+    display: none;
+  }
+}

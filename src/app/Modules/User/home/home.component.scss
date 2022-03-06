@@ -1,0 +1,1089 @@
+.container {
+  padding-bottom: 50px;
+  margin-top: 4.5rem;
+
+  .homeAnonymous {
+    .contentDivs {
+      .topCarousel {
+        position: relative;
+
+        .carousel_scroll {
+          display: flex;
+          flex-wrap: nowrap;
+          overflow-x: hidden;
+
+          .carousal_colored_card {
+            flex: 0 0 auto;
+            width: 100vw;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+
+        .carousel_scroll::-webkit-scrollbar {
+          display: none;
+        }
+
+        .btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 100%;
+          height: 148px;
+          width: 4%;
+          min-width: 40px;
+          border-radius: 2px;
+          background-repeat: no-repeat;
+          z-index: 100;
+          cursor: pointer;
+        }
+
+        .forward_show_list {
+          vertical-align: middle;
+          background: transparent;
+          right: 0px;
+
+          img {
+            width: 10px;
+            background: transparent;
+            margin-top: -5px;
+          }
+
+          img::selection {
+            background: transparent;
+          }
+        }
+
+        .backward_show_list {
+          vertical-align: middle;
+          background: transparent;
+          left: 0px;
+
+          img {
+            width: 10px;
+            background: transparent;
+            margin-top: -5px;
+          }
+
+          img::selection {
+            background: transparent;
+          }
+        }
+
+        .navugation {
+          position: absolute;
+          bottom: 10%;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          background: transparent;
+          transition: .4s;
+
+
+
+          .selector {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #C4C4C4;
+            margin: 5px;
+            cursor: pointer;
+
+            &:hover {
+              background: #0F79AF;
+            }
+          }
+        }
+      }
+
+      .allContent {
+        display: flex;
+        flex-direction: column;
+
+        p {
+          padding-left: 5%;
+          font-size: 21px;
+          line-height: 29px;
+          letter-spacing: 0.15em;
+          margin-bottom: .7rem;
+          margin-top: 2rem;
+        }
+
+        .selectLang {
+          .gallery-lang {
+            position: relative;
+            width: 100%;
+
+            .gallery_scroller {
+              scroll-snap-type: x mandatory;
+              overflow-x: scroll;
+              overflow-y: hidden;
+              display: flex;
+              align-items: center;
+              -webkit-overflow-scrolling: touch;
+
+
+              .colored_card-lang {
+                min-width: 165.55px;
+                height: 147px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-right: 7.5px;
+                overflow: hidden;
+                margin-left: 0;
+                background-color: rgba(15, 121, 175, 0.8);
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                transition: 250ms all;
+                position: relative;
+
+                .lang-img {
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  top: 0;
+                  bottom: 0;
+                  height: 100%;
+                  width: 100%;
+                }
+
+                h2 {
+                  position: absolute;
+                  font-size: 4rem;
+                  z-index: 12;
+                  top: 47%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  line-height: 4.5rem;
+                }
+
+                span {
+                  font-size: 1rem;
+                  position: absolute;
+                  left: 50%;
+                  bottom: 7%;
+                  transform: translateX(-50%);
+                  z-index: 12;
+                  letter-spacing: 2px;
+                }
+              }
+
+              #col1,
+              #col2,
+              #col3,
+              #col4,
+              #col5,
+              #col6,
+              #col7,
+              #col8,
+              #col9,
+              #col10 {
+                &::after {
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  top: 0;
+                  bottom: 0;
+                  z-index: 10;
+
+                }
+              }
+
+              #col1,
+              #col7 {
+                &::after {
+                  background: linear-gradient(0deg, rgba(140, 101, 250, 0.53), rgba(140, 101, 250, 0.53))
+                }
+              }
+
+              #col2,
+              #col8 {
+                &::after {
+                  background: linear-gradient(0deg, rgba(193, 62, 62, 0.53), rgba(193, 62, 62, 0.53))
+                }
+              }
+
+              #col3,
+              #col9 {
+                &::after {
+                  background: linear-gradient(0deg, rgba(11, 85, 9, 0.53), rgba(11, 85, 9, 0.53))
+                }
+              }
+
+              #col4,
+              #col10 {
+                &::after {
+                  background: linear-gradient(0deg, rgba(255, 107, 0, 0.53), rgba(255, 107, 0, 0.53))
+                }
+              }
+
+              #col5 {
+                &::after {
+                  background: linear-gradient(0deg, rgba(240, 32, 169, 0.53), rgba(240, 32, 169, 0.53))
+                }
+              }
+
+              #col6 {
+                &::after {
+                  background: linear-gradient(0deg, rgba(171, 143, 2, 0.53), rgba(171, 143, 2, 0.53))
+                }
+              }
+
+              .colored_card-lang:first-child {
+                margin-left: 40px;
+              }
+
+            }
+
+            .gallery_scroller::-webkit-scrollbar {
+              display: none;
+            }
+
+            .btn {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              height: 100%;
+              height: 148px;
+              width: 4%;
+              min-width: 40px;
+              border-radius: 2px;
+              background-repeat: no-repeat;
+              z-index: 100;
+              cursor: pointer;
+            }
+
+            .forward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(180deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              right: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+                margin-top: -5px;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+
+            .backward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(90deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              left: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+                margin-top: -5px;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+          }
+        }
+
+        .genres {
+          .gallery-gen {
+            position: relative;
+            width: 100%;
+
+
+            .gallery_scroller {
+              scroll-snap-type: x mandatory;
+              overflow-x: scroll;
+              overflow-y: hidden;
+              display: flex;
+              align-items: center;
+              -webkit-overflow-scrolling: touch;
+
+              .colored_card {
+                position: relative;
+                height: 147px;
+                min-width: 148px;
+                display: inline-block;
+                margin-right: 7.5px;
+                overflow: hidden;
+                margin-left: 0px;
+
+                img {
+                  border-radius: 10px;
+                  width: 100%;
+                  height: 100%;
+                  opacity: .6;
+                }
+
+                span {
+                  font-size: 13px;
+                  line-height: 18px;
+                  position: absolute;
+                  bottom: 10px;
+                  left: 10px;
+                  background: transparent;
+                }
+
+                ;
+              }
+
+              .colored_card:first-child {
+                margin-left: 40px;
+              }
+
+            }
+
+            .gallery_scroller::-webkit-scrollbar {
+              display: none;
+            }
+
+            .btn {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              height: 100%;
+              height: 147px;
+              width: 4%;
+              min-width: 40px;
+              border-radius: 2px;
+              background-repeat: no-repeat;
+              z-index: 100;
+              cursor: pointer;
+            }
+
+            .forward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(180deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              right: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+
+            .backward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(90deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              left: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+          }
+        }
+
+        .watchlist,
+        .comingSoon {
+          .gallery-soon {
+            position: relative;
+            width: 100%;
+
+            .gallery_scroller {
+              scroll-snap-type: x mandatory;
+              overflow-x: scroll;
+              overflow-y: hidden;
+              display: flex;
+              align-items: center;
+              -webkit-overflow-scrolling: touch;
+
+              .colored_card {
+                position: relative;
+                height: 352px;
+                min-width: 226px;
+                display: inline-block;
+                margin-right: 7.5px;
+                overflow: hidden;
+                margin-left: 0px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+
+                .crown{
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 40px;
+                  width: 44px;
+                  box-sizing: border-box;
+                  padding: 5px 10px 9px 7px;
+                  border-radius: 10px 0 28px 0;
+                  background-color: #329bcf;
+                  img{
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+
+                img {
+                  border-radius: 10px;
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              .colored_card:first-child {
+                margin-left: 40px;
+              }
+
+            }
+
+            .gallery_scroller::-webkit-scrollbar {
+              display: none;
+            }
+
+            .btn {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              height: 100%;
+              height: 352px;
+              width: 4%;
+              min-width: 40px;
+              border-radius: 2px;
+              background-repeat: no-repeat;
+              z-index: 100;
+              cursor: pointer;
+            }
+
+            .forward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(180deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              right: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+
+            .backward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(90deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              left: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+          }
+        }
+
+        .continue {
+          .gallery {
+            position: relative;
+            width: 100%;
+
+            .gallery_scroller {
+              scroll-snap-type: x mandatory;
+              overflow-x: scroll;
+              overflow-y: hidden;
+              display: flex;
+              align-items: center;
+              -webkit-overflow-scrolling: touch;
+
+              .colored_card {
+                height: 164px;
+                min-width: 246px;
+                display: inline-block;
+                margin-right: 7.5px;
+                overflow: hidden;
+                margin-left: 0px;
+
+                img {
+                  border-radius: 10px;
+                  width: 100%;
+                  height: 100%;
+                }
+                .crown{
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 40px;
+                  width: 44px;
+                  box-sizing: border-box;
+                  padding: 5px 10px 9px 7px;
+                  border-radius: 10px 0 28px 0;
+                  background-color: #329bcf;
+                  img{
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+              }
+
+              .colored_card:first-child {
+                margin-left: 40px;
+              }
+
+            }
+
+            .gallery_scroller::-webkit-scrollbar {
+              display: none;
+            }
+
+            .btn {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              height: 100%;
+              height: 164px;
+              width: 4%;
+              min-width: 40px;
+              border-radius: 2px;
+              background-repeat: no-repeat;
+              z-index: 100;
+              cursor: pointer;
+            }
+
+            .forward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(180deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              right: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+
+            .backward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(90deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              left: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+          }
+        }
+
+        .watchedMovi,
+        .latest,
+        .series,
+        .kids,
+        .trendingNow,
+        .dubbed,
+        .topRated,
+        .comedy,
+        .hindi,
+        .telugu,
+        .thriller,
+        .kannada,
+        .horror,
+        .english,
+        .drama,
+        .malayalam,
+        .tamil {
+          .gallery {
+            position: relative;
+            width: 100%;
+
+            .gallery_scroller {
+              scroll-snap-type: x mandatory;
+              overflow-x: scroll;
+              overflow-y: hidden;
+              display: flex;
+              align-items: center;
+              -webkit-overflow-scrolling: touch;
+
+              .colored_card {
+                position: relative;
+                height: 164px;
+                min-width: 246px;
+                display: inline-block;
+                margin-right: 7.5px;
+                overflow: hidden;
+                margin-left: 0px;
+
+                .crown{
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 40px;
+                  width: 44px;
+                  box-sizing: border-box;
+                  padding: 5px 10px 9px 7px;
+                  border-radius: 10px 0 28px 0;
+                  background-color: #329bcf;
+                  img{
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+
+                img {
+                  border-radius: 10px;
+                  width: 100%;
+                  height: 100%;
+                }
+
+                .progress-bar-fill {
+                  position: absolute;
+                  width: 99.5%;
+                  bottom: 25px;
+                  left: 0;
+                  right: 0;
+                  height: 5px;
+                  background-color: #ffffff;
+                  border-radius: 3px;
+                  z-index: 5;
+                  transition: width 500ms ease-in-out;
+
+                  .red-progress {
+                   
+                    background-color: #B51717;
+                    height: 5px;
+                    border-radius: 3px;
+                   
+                  }
+
+                }
+              }
+
+              .colored_card:first-child {
+                margin-left: 40px;
+              }
+
+            }
+
+            .gallery_scroller::-webkit-scrollbar {
+              display: none;
+            }
+
+            .btn {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              height: 100%;
+              height: 164px;
+              width: 4%;
+              min-width: 40px;
+              border-radius: 2px;
+              background-repeat: no-repeat;
+              z-index: 100;
+              cursor: pointer;
+            }
+
+            .forward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(180deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              right: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+
+            .backward_show_list {
+              vertical-align: middle;
+              background: linear-gradient(90deg, #000000 0%, rgba(29, 29, 29, 0.6) 100%);
+              left: 0px;
+
+              img {
+                width: 10px;
+                background: transparent;
+              }
+
+              img::selection {
+                background: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+:host>>>ngx-skeleton-loader .loader {
+  border-radius: 5px;
+  height: 50px;
+  background-color: #1b1a1a;
+  border: 1px solid rgb(48, 46, 46);
+}
+
+::ng-deep .progress {
+  background-image: linear-gradient(90deg, #24222269, rgb(50 50 50 / 45%), rgb(50 50 50 / 94%)) !important;
+}
+
+.meter {
+  height: 20px;
+  /* Can be anything */
+  position: relative;
+  background: #555;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.meter>span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(43, 194, 83);
+  background-image: linear-gradient(center bottom,
+      rgb(43, 194, 83) 37%,
+      rgb(84, 240, 84) 69%);
+  box-shadow:
+    inset 0 2px 9px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.orange>span {
+  background-color: #f1a165;
+  background-image: linear-gradient(to bottom, #f1a165, #f36d0a);
+}
+
+.red>span {
+  background-color: #f0a3a3;
+  background-image: linear-gradient(to bottom, #f0a3a3, #f42323);
+}
+
+.meter>span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(-45deg,
+      rgba(255, 255, 255, .2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, .2) 50%,
+      rgba(255, 255, 255, .2) 75%,
+      transparent 75%,
+      transparent);
+  z-index: 1;
+  background-size: 50px 50px;
+  animation: move 2s linear infinite;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+}
+
+
+.wrapper {
+  width: 500px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  padding: 3px;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+}
+
+.progress-bar-fill {
+  display: block;
+  height: 22px;
+  background-color: #659cef;
+  border-radius: 3px;
+
+  transition: width 500ms ease-in-out;
+}
+
+@media (max-width:850px) {
+
+  .container {
+    transition: 1000ms;
+
+    .homeAnonymous {
+      .contentDivs {
+        .allContent {
+          p {
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            margin-bottom: .5rem;
+          }
+
+          .selectLang {
+            .gallery-lang {
+              .gallery_scroller {
+                .colored_card-lang {
+                  min-width: 135px;
+                  height: 120px;
+
+                  &:hover {
+                    transform: scale(1);
+                  }
+                }
+
+                .colored_card-lang:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                height: 122px;
+                width: 2%;
+              }
+            }
+          }
+
+          .continue,
+          .watchedMovi,
+          .latest,
+          .series,
+          .kids,
+          .trendingNow,
+          .dubbed,
+          .topRated,
+          .comedy,
+          .hindi,
+          .telugu,
+          .thriller,
+          .kannada,
+          .horror,
+          .english,
+          .drama,
+          .malayalam,
+          .tamil {
+            .gallery {
+              .gallery_scroller {
+                .colored_card {
+                  height: 130px;
+                  min-width: 195px;
+                  max-width: 195px;
+
+                  &:hover {
+                    transform: scale(1);
+                  }
+                }
+
+                .colored_card:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                height: 132px;
+                width: 2vw;
+              }
+            }
+          }
+
+          .genres {
+            .gallery-gen {
+              .gallery_scroller {
+                .colored_card {
+                  height: 150px;
+                  min-width: 150px;
+                  max-width: 150px;
+
+                  &:hover {
+                    transform: scale(1);
+                  }
+                }
+
+                .colored_card:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                height: 152px;
+              }
+            }
+          }
+
+          .watchlist,
+          .comingSoon {
+            .gallery-soon {
+              .gallery_scroller {
+                .colored_card {
+                  height: 249px;
+                  min-width: 160px;
+                  max-width: 160px;
+
+                  &:hover {
+                    transform: scale(1);
+                  }
+                }
+
+                .colored_card:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                height: 251px;
+                width: 2vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:550px) {
+
+  .container {
+    transition: 1000ms;
+    .homeAnonymous {
+      .contentDivs {
+        .allContent {
+          p {
+            font-size: 1rem;
+            margin-top: .8rem;
+            margin-bottom: 0;
+            line-height: 1;
+          }
+
+          .selectLang {
+            .gallery-lang {
+              .gallery_scroller {
+                .colored_card-lang {
+                  min-width: 112.5px;
+                  height: 100px;
+                }
+
+              }
+
+              .btn {
+                display: none;
+              }
+            }
+          }
+
+          .continue,
+          .watchedMovi,
+          .latest,
+          .series,
+          .kids,
+          .trendingNow,
+          .dubbed,
+          .topRated,
+          .comedy,
+          .hindi,
+          .telugu,
+          .thriller,
+          .kannada,
+          .horror,
+          .english,
+          .drama,
+          .malayalam,
+          .tamil {
+            .gallery {
+              .gallery_scroller {
+                .colored_card {
+                  height: 100px;
+                  min-width: 150px;
+                  max-width: 150px;
+                }
+
+                .colored_card:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                display: none;
+              }
+            }
+          }
+
+          .genres {
+            .gallery-gen {
+              .gallery_scroller {
+                .colored_card {
+                  height: 130px;
+                  min-width: 130px;
+                  max-width: 130px;
+                }
+
+                .colored_card:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                display: none;
+              }
+            }
+          }
+
+          .watchlist,
+          .comingSoon {
+            .gallery-soon {
+              .gallery_scroller {
+                .colored_card {
+                  height: 220px;
+                  min-width: 140px;
+                  max-width: 140px;
+                }
+
+                .colored_card:first-child {
+                  margin-left: 20px;
+                }
+              }
+
+              .btn {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width:500px){
+  .container{
+    margin-top: 0;
+  }
+}

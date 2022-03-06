@@ -1,0 +1,283 @@
+<div class="container">
+  <div class="homeAnonymous">
+    <div class="contentDivs">
+      <div class="topPic" *ngIf="playing">
+        <!-- <app-video-player [videoDeatils]="series"></app-video-player> -->
+        <vg-player vg-theme="controller.config.theme.url" (onPlayerReady)="onPlayerReady($event)">
+          <vg-controls vgFor="singleVideo" [vgAutohide]="true">
+            <vg-play-pause></vg-play-pause>
+            <vg-playback-button vgFor="singleVideo" [playbackValues]="[ '1.0', '2.0', '4.0' ]"></vg-playback-button>
+
+            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+            <!-- <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar> -->
+            <vg-scrub-bar>
+              <vg-scrub-bar-current-time style="background: grey;"></vg-scrub-bar-current-time>
+            </vg-scrub-bar>
+
+            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+            <vg-track-selector></vg-track-selector>
+
+            <vg-mute></vg-mute>
+            <vg-volume></vg-volume>
+
+            <vg-fullscreen></vg-fullscreen>
+            <vg-quality-selector *ngIf="bitrates" [bitrates]="bitrates" (onBitrateChange)="setBitrate($event)">
+            </vg-quality-selector>
+          </vg-controls>
+          <vg-overlay-play vgFor="singleVideo"></vg-overlay-play>
+          <vg-buffering vgFor="singleVideo"></vg-buffering>
+          <!-- <vg-poster [vg-url]="series.Poster.Url"></vg-poster> -->
+          <!-- <video [vgMedia]="media" #media id="singleVideo" preload="auto" >
+                    <source src="{{movieDetails.accessUrls.hls_High}}" type="video/mp4">
+                </video> (onGetBitrates)="bitrates = $event" -->
+          <video #media #vgHls="vgHls" [vgMedia]="media" preload="auto" [vgHls]="playVideoUrl" id="singleVideo"
+            autoplay="true" crossorigin>
+            <track kind="subtitles" label="English" src="http://static.videogular.com/assets/subs/pale-blue-dot.vtt"
+              srclang="en" default>
+            <track kind="subtitles" label="Español" src="http://static.videogular.com/assets/subs/pale-blue-dot-es.vtt"
+              srclang="es">
+          </video>
+        </vg-player>
+      </div>
+      <div class="topPic" *ngIf="!series">
+        <ngx-skeleton-loader count="1" style="width:100%;" appearance="pulse" [theme]="{
+          'border-radius': '5px',
+          height: '100%',
+          width: '100%',
+          'background-color': '#323232',
+          border: '1px solid #323232',
+          'animation-duration': '2s'
+        }"> </ngx-skeleton-loader>
+      </div>
+      <div class="topPic" *ngIf="!playing && series">
+        <div class="epi">
+          <div class="topLine">
+            <p class="title">{{series.Title}}hi</p>
+            <div class="selectDiv">
+              <select name="drp" id="drp" (change)="getEpisodeBySeasonId($event.target.value)">
+                <option value="">Select Season</option>
+                <option [value]="season.SeasonId" *ngFor="let season of series.Seasons; let i=index">Season {{i+1}}
+                </option>
+              </select>
+              <img src="../../../../assets/imgsss/Play.svg" alt="">
+            </div>
+          </div>
+
+          <div class="shortDetails">
+            <p class="extraDetails">{{series.YearOfProduction}}</p>
+            <!-- <p class="extraDetails">IMDB</p>
+            <p class="extraDetails">8.1</p> -->
+            <p class="extraDetailsBorder">{{series.AgeRestriction}}</p>
+          </div>
+
+          <div class="about">
+            <p>{{series.Description}}</p>
+          </div>
+
+          <div class="activity">
+            <img src="../../../../assets/imgsss/Play Button.svg" alt=""
+              (click)="play(series.Seasons[0].Episodes[0].AccessUrls)">
+            <p>Play Now</p>
+            <div class="blue-box">
+              <img src="../../../../assets/imgsss/+1.svg" alt="">
+              <span>Watchlist</span>
+            </div>
+            <!-- <div class="blue-box">
+              <img src="../../../../assets/imgsss/download 2.svg" alt="">
+              <span>Download Episode 1</span>
+            </div> -->
+            <div class="blue-box">
+              <img src="../../../../assets/imgsss/share 2.svg" alt="">
+              <span>Share</span>
+            </div>
+          </div>
+
+          <div class="detailsOfEpi">
+            <div class="topicNDesc">
+              <p class="topic">Starring</p>
+              <span *ngIf="actorLength > 0; else elseActor" style="display: inherit;">
+                <div class="for-col">
+                  <p class="desc" *ngFor="let cast of actor">{{cast}}</p>
+                </div>
+              </span>
+              <ng-template #elseActor>
+                <p class="desc">No info</p>
+              </ng-template>
+            </div>
+            <div class="topicNDesc">
+              <p class="topic">Genres</p>
+              <div class="for-col">
+                <p class="desc" *ngFor="let genre of series.CategoryInfo">{{genre.Name}},</p>
+              </div>
+            </div>
+            <!-- <div class="topicNDesc">
+              <p class="topic">Subtitles</p>
+              <p class="desc">English, Hindi</p>
+            </div> -->
+            <div class="topicNDesc">
+              <p class="topic">Audio Languages</p>
+              <div class="for-col">
+                <p class="desc">{{series.LanguageName}},</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mainImg">
+          <img src="{{series.Poster.Url}}" alt="">
+        </div>
+        <div class="selectIt3">
+          <div class="selectIt" (click)="selectedChanged('allEpisodes')">
+            <div>Episodes
+              <hr *ngIf="selected=='allEpisodes'">
+            </div>
+
+          </div>
+          <div class="selectIt" (click)="selectedChanged('fullDetails')">
+            <div>Details
+              <hr *ngIf="selected=='fullDetails'">
+
+            </div>
+          </div>
+          <div class="selectIt" (click)="selectedChanged('moreLikeThis')">
+            <div>More Like This
+              <hr *ngIf="selected=='moreLikeThis'">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- all episodes -->
+      <div [hidden]="!(selected=='allEpisodes' || loading)" class="allEpisodes">
+        <div #paginated_gallery1 class="gallery">
+          <!-- <div class="gallery_scroller">
+            <div class="colored_card" *ngFor="let ep of episode">
+              <div class="epi-Img">
+                <Img class="imgMain" [src]="ep.Poster.Url">
+                <span>{{ep.Title}}</span>
+                <p>{{ep.RunTime}} mins</p>
+              </div>
+              <div class="epi-Details">
+                <div class="extraDetails">{{ep.Description}}</div>
+                <div class="date">{{ep.YearOfProduction}}</div>
+              </div>
+            </div>
+
+          </div> -->
+          <div class="gallery_scroller">
+            <div *ngIf="episodeLength <= 0" style="display: inherit;">
+              <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                  'border-radius': '5px',
+                  height: '100%',
+                  'background-color': '#323232',
+                  border: '1px solid #323232',
+                  'animation-duration': '2s'
+                }"> </ngx-skeleton-loader>
+              </div>
+            </div>
+            <div *ngIf="morelikethisLength > 0" style="display: inherit;">
+              <div class="colored_card" *ngFor="let ep of episode" (click)="play(ep.AccessUrls)">
+                <div class="epi-Img">
+                  <Img class="imgMain" [src]="ep.Poster.Url">
+                  <span>{{ep.Title}}</span>
+                  <p>{{ep.RunTime}} mins</p>
+                  <!-- <img class="imgdown" src="../../../../assets/imgsss/download 2.svg" alt=""> -->
+                </div>
+                <div class="epi-Details">
+                  <div class="extraDetails">{{ep.Description}}</div>
+                  <div class="date">{{ep.YearOfProduction}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="btn backward_show_list">
+            <div style="right:50%;top:43%;position: absolute; background: transparent;">
+              <Img src="../../../../assets/imgsss/backward_show_list.svg">
+            </div>
+          </span>
+          <span class="btn forward_show_list">
+            <div style="left:50%;top:43%;position: absolute; background: transparent;">
+              <Img src="../../../../assets/imgsss/forward_show_list.svg">
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <!-- full details -->
+      <div [hidden]="!(selected=='fullDetails' || loading)" class="fullDetails">
+        <div class="heading">
+          More Details
+        </div>
+        <!-- <div class="topicNDesc">
+          <p class="topic">Created by</p>
+          <p class="desc">Jeremy Slater</p>
+        </div> -->
+        <div class="topicNDesc">
+          <p class="topic">Directed by</p>
+          <span *ngIf="directorLength > 0; else elseDirector" style="display: inherit;">
+            <p class="desc" *ngFor="let cast of director"><span>{{cast}}</span></p>
+          </span>
+          <ng-template #elseDirector>
+            <p class="desc">No info</p>
+          </ng-template>
+        </div>
+        <div class="topicNDesc">
+          <p class="topic">Producers</p>
+          <span *ngIf="producerLength > 0; else elseProducer" style="display: inherit;">
+            <p class="desc" *ngFor="let cast of producer">{{cast}}</p>
+          </span>
+          <ng-template #elseProducer>
+            <p class="desc">No Info</p>
+          </ng-template>
+        </div>
+        <div class="topicNDesc">
+          <p class="topic">No. of seasons</p>
+          <p class="desc">2</p>
+        </div>
+        <div class="topicNDesc">
+          <p class="topic">No. of episodes</p>
+          <p class="desc">20</p>
+        </div>
+      </div>
+
+      <!-- more like this -->
+      <div [hidden]="!(selected=='moreLikeThis' || loading)" class="moreLikeThis">
+        <div class="alike">
+          <div #paginated_gallery2 class="gallery">
+            <div class="gallery_scroller">
+              <div *ngIf="morelikethisLength <= 0" style="display: inherit;">
+                <div class="colored_card" *ngFor='let in of counter(10) ;let i = index'>
+                  <ngx-skeleton-loader count="1" appearance="pulse" [theme]="{
+                  'border-radius': '5px',
+                  height: '100%',
+                  'background-color': '#323232',
+                  border: '1px solid #323232',
+                  'animation-duration': '2s'
+                }"> </ngx-skeleton-loader>
+                </div>
+              </div>
+              <div *ngIf="morelikethisLength > 0" style="display: inherit;">
+                <div class="colored_card" *ngFor="let posters of morelikethis">
+                  <Img src="{{posters.PosterUrl}}" (click)="getPageById(posters.Id)">
+                </div>
+              </div>
+            </div>
+            <span class="btn backward_show_list">
+              <div style="right:50%;top:43% ;position: absolute; background: transparent;">
+                <Img src="../../../../assets/imgsss/backward_show_list.svg">
+              </div>
+            </span>
+            <span class="btn forward_show_list">
+              <div style="left:50%;top:43%;position: absolute; background: transparent;">
+                <Img src="../../../../assets/imgsss/forward_show_list.svg">
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
